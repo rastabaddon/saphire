@@ -1,0 +1,4 @@
+DIR|blur
+DIR|hdr
+FILE|filelist.txt
+

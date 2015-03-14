@@ -1,0 +1,5 @@
+*.pak
+*.zpak
+*.rpak
+*.7pak
+

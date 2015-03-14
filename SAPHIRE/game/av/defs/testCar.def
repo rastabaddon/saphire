@@ -1,0 +1,12 @@
+<body type="CAR" object="testcar.3ds" connectors="4" mass="1200" steeringstronge="0.1" steeringmaxangle="0.8" ></body>
+<engine horses="240" topspeed="220" ></engine>
+<breakes breakstrong="50" handbreakstrong="100" ></breakes>
+<connector1 x="0.9" y="-0.0" z="1.43" steering="true" object="connector.3ds" engine="true" break="true" handbreak="false" ></connector1>
+<connector2 x="-0.9" y="-0.0" z="1.43" steering="true" object="lconnector.3ds" engine="true" break="true" handbreak="false" ></connector2>
+<connector3 x="0.9" y="-0.0" z="-1.35" steering="false" object="connector.3ds" engine="false" break="false" handbreak="true"  ></connector3>
+<connector4 x="-0.9" y="-0.0" z="-1.35" steering="false" object="lconnector.3ds" engine="false" break="false" handbreak="true" ></connector4>
+
+<wheel1 object="wheel.3ds" ></wheel1>
+<wheel2 object="wheel.3ds" ></wheel2>
+<wheel3 object="wheel.3ds" ></wheel3>
+<wheel4 object="wheel.3ds" ></wheel4>

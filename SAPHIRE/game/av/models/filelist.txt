@@ -1,0 +1,3 @@
+FILE|filelist.txt
+FILE|teren.3ds
+

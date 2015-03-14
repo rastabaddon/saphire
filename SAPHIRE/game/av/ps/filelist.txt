@@ -1,0 +1,4 @@
+DIR|fx
+DIR|material
+FILE|filelist.txt
+

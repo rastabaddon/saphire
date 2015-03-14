@@ -1,0 +1,5 @@
+FILE|boot.png
+FILE|filelist.txt
+FILE|loadinga.png
+FILE|loadingb.png
+

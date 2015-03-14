@@ -1,0 +1,11 @@
+<screen id="menus_options">
+	<image src="img/bottom.png" x="0" y="0" id="menus_start_dynamic_image" >	 
+	<image src="img/top.png" x="0" y="0" > 	  
+	  				  
+	<groupaction id="menus_start_action" x="0" y="0.5" default="1" prev="UP" next="DOWN" >
+		<button id="menus_start_button_1" text="Change graphic settings" 	tooltip="text1"	x="800" y="400" onClick="Game:start(Game.defaultGame);" /> <!-- START GAME -->
+		<button id="menus_start_button_2" text="Change sound settings"  	tooltip="text2"	x="800" y="450" onClick="Game:options(Game.defaultGame);" /> <!-- OPTIONS -->
+		<button id="menus_start_button_2" text="Change control settings"  	tooltip="text2"	x="800" y="450" onClick="Game:options(Game.defaultGame);" /> <!-- OPTIONS -->
+		<button id="menus_start_button_3" text="return"		tooltip="text3"	x="800" y="500" onClick="Game:mainMenu(Game.defaultGame);" /> <!-- EXIT -->
+	</groupaction>
+</screen>

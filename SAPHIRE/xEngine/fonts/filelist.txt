@@ -1,0 +1,3 @@
+FILE|default.png
+FILE|filelist.txt
+

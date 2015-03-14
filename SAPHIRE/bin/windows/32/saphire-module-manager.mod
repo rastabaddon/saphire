@@ -1,0 +1,1 @@
+/home/rast/Desktop/workspace/saphire-module-manager/Windows32/saphire-module-manager.mod

@@ -1,0 +1,11 @@
+DIR|bin
+DIR|config
+DIR|editor
+DIR|game
+DIR|mods
+DIR|xEngine
+FILE|.linux.sh
+FILE|.windows.cmd
+FILE|filelist.txt
+FILE|run.cmd
+

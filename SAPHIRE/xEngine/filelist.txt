@@ -1,0 +1,9 @@
+DIR|config
+DIR|fonts
+DIR|GUI
+DIR|img
+DIR|script
+DIR|sound
+FILE|filelist.txt
+FILE|pack.cfg
+

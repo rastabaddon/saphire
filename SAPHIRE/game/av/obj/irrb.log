@@ -1,0 +1,75 @@
+irrb log 0.4
+
+[blender info]
+             OS: Linux 3.2.1-gentoo-r2 #8 SMP Sun Oct 14 10:56:26 BST 2012
+        Version: 249
+    .blend File: /home/rast/Desktop/workspace/Av/xEngineFull/game/av/obj/terrain.blend
+    .blend Root: /home/rast/Desktop/workspace/Av/xEngineFull/game/av/obj
+ Python Version: 2.7.2 final
+
+[options]
+   Create Scene: False
+ Base Directory: /home/rast/workspace/Av/xEngineFull/game/av/obj/
+Scene Directory: /home/rast/workspace/Av/xEngineFull/game/av/obj/
+ Mesh Directory: /home/rast/workspace/Av/xEngineFull/game/av/obj/
+Image Directory: /home/rast/workspace/Av/xEngineFull/game/av/obj/
+     meshOutDir: mdl
+      texOutDir: tex
+         Binary: False
+ Export Cameras: True
+  Export Lights: True
+ Export Physics: True
+Image Extension: Original
+  Selected Only: True
+   Irrlicht Ver: 1.6
+  iwalktest Env: 
+   imeshcvt Env: 
+  iwalktest Cmd: 
+
+[scene info]
+Scene Name:Scene
+Visible Layers: [1]
+
+[animation info]
+fpsbase: 1.0000
+    fps: 25
+ sFrame: 1
+ eFrame: 250
+
+[ipo info]
+IPO's: []
+Key's: []
+
+[action info]
+
+[object info]
+Object (0): Name=Plane, Type=Mesh, Layers=[1]
+Object (1): Name=Lamp, Type=Lamp, Layers=[1]
+Object (2): Name=Camera, Type=Camera, Layers=[1]
+
+[Mesh - ob:Plane, me:terrain]
+Restrict Display: False
+Restrict Render: False
+UV Layers (0): 
+Primary UV Layer: None
+Double Sided: True
+Mesh VertexColors: False
+Mesh Key: None
+Mesh ipo: None
+Modifiers: None
+Armatures: None
+rbflags:14000
+pflags: ['PROP']
+isSoftBody: False
+
+[Buffers]
+Count: 1
+   blender:Material:00 : BlenderMaterial
+
+[stats]
+Export Complete - 0.63 seconds - 23:51:37 04/09/13
+1 Object(s)
+1 Mesh
+0 Light(s)
+0 Image(s)
+4018/7848 Verts/Tris

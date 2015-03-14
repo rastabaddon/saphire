@@ -1,0 +1,1 @@
+/home/rast/Desktop/workspace/saphire-module-manager/Linux64/saphire-module-manager.mod

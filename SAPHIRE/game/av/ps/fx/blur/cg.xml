@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Program Vertex="cg.vp" Pixel="cg.fp" type="material" />
+<EntryPointName Vertex="main" Pixel="main"/>
+<OpenGLProfile Vertex="arbvp1" Pixel="arbfp1"/>
+<DirectXProfile Vertex="vs_2_0" Pixel="ps_2_0"/>
+<Material Type="EMT_SOLID"/>
+
+<CallBack>
+   <ParameterCameraPosition Program="Vertex" Name="eyePosition"/>
+
+   <ParameterWVPMatrix Program="Vertex" Name="WorldViewProj" Transform="MATRIX_IDENTITY"/>
+   <Parameter3f Program="Vertex" Name="lightPosition" X="0.0" Y="0.0" Z="120.0"/>
+
+   <Texture Program="Pixel" Name="DecalMap" ID="0"/>
+   <Texture Program="Pixel" Name="NormalMap" ID="1"/>
+   <Texture Program="Pixel" Name="SpecularMap" ID="2"/>
+
+   <Parameter3f Program="Pixel" Name="LightDiffuse" X="1.0" Y="1.0" Z="1.0"/>
+<CallBack/>
+
+<author name="Jan Kowalski" />
+<desc value="Opissdasdas" />	
