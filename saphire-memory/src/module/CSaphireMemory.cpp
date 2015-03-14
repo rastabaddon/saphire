@@ -6,7 +6,7 @@
  */
 
 #include "CSaphireMemory.h"
-
+#include "CMemoryBuffer.h"
 
 namespace Saphire {
 namespace Module {
@@ -22,6 +22,11 @@ CSaphireMemory::~CSaphireMemory() {
 
 Saphire::Core::Types::String CSaphireMemory::getName() {
 	return "saphire-memory";
+}
+
+Saphire::Core::Types::IMemoryBuffer * CSaphireMemory::createMemoryBuffer(Saphire::Core::Types::size size)
+{
+	return new CMemoryBuffer(this,size);
 }
 
 void* CSaphireMemory::allocate (size_t size)

@@ -16,7 +16,7 @@ namespace Files {
 
 class CNativeArchive : public Saphire::Core::Files::IArchive {
 public:
-	CNativeArchive(Saphire::Core::Types::String name);
+	CNativeArchive(Saphire::Core::Types::String name,Saphire::Module::ICoreModule * core);
 	virtual ~CNativeArchive();
 
 	const Saphire::Core::Types::String getName();
@@ -25,6 +25,7 @@ public:
 
 private:
 	Saphire::Core::Types::String path;
+	Saphire::Module::ICoreModule * SPTR_core;
 };
 
 } /* namespace Files */

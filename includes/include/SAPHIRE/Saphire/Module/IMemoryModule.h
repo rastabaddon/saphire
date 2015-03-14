@@ -18,6 +18,8 @@ namespace Saphire {
 		class IMemoryModule : public Saphire::Module::IModule
 		{
 		public:
+			virtual Saphire::Core::Types::IMemoryBuffer * createMemoryBuffer(Saphire::Core::Types::size size)=0;
+
 			virtual void* allocate (size_t size)=0;
 			virtual void deallocate (void* pointerToDelete)=0;
 

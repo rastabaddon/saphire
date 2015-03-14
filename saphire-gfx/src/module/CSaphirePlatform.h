@@ -15,13 +15,13 @@ namespace Module {
 
 class CSaphirePlatform : public Saphire::Module::IPlatformModule {
 public:
-	CSaphirePlatform(Saphire::Module::SPTR_ICoreModule  core);
+	CSaphirePlatform(Saphire::Module::ICoreModule *  core);
 	virtual ~CSaphirePlatform();
 
 	Saphire::Core::Types::String getName();
 
 private:
-	Saphire::Module::SPTR_ICoreModule SPTR_core;
+	Saphire::Module::ICoreModule * SPTR_core;
 
 };
 

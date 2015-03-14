@@ -19,6 +19,9 @@ public:
 
 	Saphire::Core::Types::String getName();
 
+	Saphire::Core::Types::IMemoryBuffer * createMemoryBuffer(Saphire::Core::Types::size size);
+
+	//Native raw allocator
 	void* allocate (size_t size);
 	void deallocate (void* pointerToDelete);
 

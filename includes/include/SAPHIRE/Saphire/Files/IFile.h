@@ -17,7 +17,7 @@ namespace Saphire {
 				class IFile : public Saphire::IBaseObject
 				{
 					public:
-
+					virtual Saphire::Core::Types::size getSize()=0;
 
 				};
 

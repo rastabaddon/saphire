@@ -8,7 +8,7 @@
 #ifndef SAPHIRE_INC_H_
 #define SAPHIRE_INC_H_
 
-	#include "IBaseObject.h"
+
 
 	#include "Core/core_inc.h"
 	#include "Debug/debug_inc.h"

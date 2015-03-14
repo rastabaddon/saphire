@@ -11,9 +11,10 @@ namespace Saphire {
 namespace Core {
 namespace Files {
 
-CNativeArchive::CNativeArchive(Saphire::Core::Types::String name) {
+CNativeArchive::CNativeArchive(Saphire::Core::Types::String name,Saphire::Module::ICoreModule * core) {
+	SPTR_core = core;
 	path = name;
-
+	SPTR_core->Debug(getName(),"Archive open %s ",path.c_str());
 }
 
 CNativeArchive::~CNativeArchive() {
@@ -26,7 +27,13 @@ const Saphire::Core::Types::String CNativeArchive::getName() {
 
 Saphire::Core::Files::IFile * CNativeArchive::openFile(Saphire::Core::Types::String path,bool writable)
 {
-		return new CNativeFile(path,writable);
+
+
+	Saphire::Core::Types::String realPath = this->path;
+	realPath += path;
+
+	SPTR_core->Debug(getName(),"Try open file %s ",realPath.c_str());
+		return new CNativeFile(SPTR_core,realPath,writable);
 }
 
 } /* namespace Files */

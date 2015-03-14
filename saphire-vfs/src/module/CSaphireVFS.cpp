@@ -14,6 +14,7 @@ namespace Module {
 
 		CSaphireVFS::CSaphireVFS(Saphire::Module::ICoreModule * core) {
 			SPTR_core = core;
+			Grab(SPTR_core);
 		}
 
 
@@ -25,20 +26,24 @@ namespace Module {
 
 
 			addArchive("/");
-			Saphire::Core::Files::IFile * file = openFile("text.txt",true);
+
+
+			Saphire::Core::Files::IFile * file = openFile("/text.txt",true);
 			if(file)
 			{
-				//file->close();
-				//delete file;
+
+
+				Delete(file);
 			}
 		}
 
 		CSaphireVFS::~CSaphireVFS() {
-
+			Free(SPTR_core);
 		}
 
 		Saphire::Core::Files::IFile * CSaphireVFS::openFile(Saphire::Core::Types::String path,bool writable)
 		{
+			SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 			Saphire::Core::Files::IFile * file = NULL;
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 			{
@@ -46,7 +51,9 @@ namespace Module {
 				if(file) { break; }
 			}
 
-
+			if(!file) {
+				SPTR_core->Debug(getName(),"Can`t open file %s ",path.c_str());
+			}
 			return file;
 		}
 

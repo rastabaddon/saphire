@@ -76,14 +76,17 @@ namespace Files {
 
 	Saphire::Core::Files::IArchive * CNativeFileSystem::openArchive(const Saphire::Core::Types::String & path)
 	{
+		Saphire::Core::Types::String realPath = currentPath;
+		realPath += path;
+
 		if(!isDirExists(path)) return NULL;
 
 		for (std::list<Saphire::Core::Files::CNativeArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{
-			 if ((*it)->getName()==path) return (*it);
+			 if ((*it)->getName()==realPath) return (*it);
 		}
 
-		Saphire::Core::Files::CNativeArchive * archive = new CNativeArchive(path);
+		Saphire::Core::Files::CNativeArchive * archive = new CNativeArchive(realPath,SPTR_core);
 
 		archives.push_front(archive);
 
@@ -93,13 +96,19 @@ namespace Files {
 
 	Saphire::Core::Files::IFile * CNativeFileSystem::openFile(Saphire::Core::Types::String path,bool writable)
 	{
+
 		if(!isFileExists(path)) return NULL;
 
+		SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 		Saphire::Core::Files::IFile * file = NULL;
 		for (std::list<Saphire::Core::Files::CNativeArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{
 			file = (*it)->openFile(path,writable);
 			if(file) break;
+		}
+
+		if(!file) {
+					SPTR_core->Debug(getName(),"Can`t open file %s ",path.c_str());
 		}
 
 		return file;

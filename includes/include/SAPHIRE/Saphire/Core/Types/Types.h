@@ -39,7 +39,8 @@ namespace Core
 	}
 }
 }
-
+	#include "IBaseObject.h"
+	#include "IMemoryBuffer.h"
 	#include "List.h"
 	#include "String.h"
 	#include "IFilePath.h"

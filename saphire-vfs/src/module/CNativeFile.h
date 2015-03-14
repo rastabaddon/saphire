@@ -15,8 +15,16 @@ namespace Files {
 
 class CNativeFile : public Saphire::Core::Files::IFile {
 public:
-	CNativeFile(Saphire::Core::Types::String path,bool writable);
+	CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Types::String path,bool writable);
 	virtual ~CNativeFile();
+
+	Saphire::Core::Types::size getSize();
+private:
+	Saphire::Module::ICoreModule * SPTR_core;
+	FILE * pFile;
+	bool writable;
+	Saphire::Core::Types::IMemoryBuffer * buffer;
+	Saphire::Core::Types::size size;
 };
 
 } /* namespace Files */

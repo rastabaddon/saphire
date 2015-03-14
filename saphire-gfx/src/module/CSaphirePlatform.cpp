@@ -12,7 +12,7 @@
 namespace Saphire {
 namespace Module {
 
-		CSaphirePlatform::CSaphirePlatform(Saphire::Module::SPTR_ICoreModule  core) {
+		CSaphirePlatform::CSaphirePlatform(Saphire::Module::ICoreModule * core) {
 			SPTR_core = core;
 
 		}
@@ -23,7 +23,7 @@ namespace Module {
 
 		Saphire::Core::Types::String CSaphirePlatform::getName()
 		{
-			return Saphire::Core::Types::String("saphire-platform");
+			return "saphire-platform";
 		}
 
 } /* namespace Manager */
