@@ -5,20 +5,29 @@
  *      Author: rast
  */
 
-#ifndef CNATIVEFILE_H_
-#define CNATIVEFILE_H_
+#ifndef CMEMORYFILE_H_
+#define CMEMORYFILE_H_
 #include "../include/inc.h"
 
 namespace Saphire {
 namespace Core {
 namespace Files {
 
-class CNativeFile : public Saphire::Core::Files::IFile {
+class CMemoryFile : public Saphire::Core::Files::IFile {
 public:
-	CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Types::String path,bool writable);
-	virtual ~CNativeFile();
+	CMemoryFile(Saphire::Module::ICoreModule * core,Saphire::Core::Types::String path,bool writable);
+	virtual ~CMemoryFile();
 
 	Saphire::Core::Types::size getSize();
+	/**
+	 * Reads a byte
+	 */
+	Saphire::Core::Types::u8 get(Saphire::Core::Types::size pos);
+
+	/**
+	 * Write a byte
+	 */
+	bool put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char);
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
 	FILE * pFile;
@@ -31,4 +40,4 @@ private:
 } /* namespace Core */
 } /* namespace Saphire */
 
-#endif /* CNATIVEFILE_H_ */
+#endif /* CMEMORYFILE_H_ */

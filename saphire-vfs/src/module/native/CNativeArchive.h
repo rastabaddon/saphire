@@ -22,6 +22,7 @@ public:
 	const Saphire::Core::Types::String getName();
 
 	Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable);
+	Saphire::Core::Types::size getSize();
 
 private:
 	Saphire::Core::Types::String path;

@@ -22,7 +22,7 @@ namespace Saphire {
 						virtual bool  isDirExists(const Saphire::Core::Types::String & name)=0;
 
 						virtual Saphire::Core::Files::IArchive * openArchive(const Saphire::Core::Types::String & path)=0;
-
+						virtual const Saphire::Core::Types::String getFileSystemDescription(){ return "No description"; };
 						//file
 						virtual Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable)=0;
 				};

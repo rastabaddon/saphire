@@ -17,8 +17,11 @@ namespace Saphire {
 				class IArchive : public Saphire::Core::Files::IFile
 				{
 					public:
+						virtual const Saphire::Core::Types::String getName()=0;
+						virtual Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable=false)=0;
 
-					virtual Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable=false)=0;
+						virtual Saphire::Core::Types::u8 get(Saphire::Core::Types::size pos){ return 0; };
+						virtual bool put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char){ return false; };
 				};
 
 

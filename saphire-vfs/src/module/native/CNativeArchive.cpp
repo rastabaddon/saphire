@@ -13,16 +13,22 @@ namespace Files {
 
 CNativeArchive::CNativeArchive(Saphire::Core::Types::String name,Saphire::Module::ICoreModule * core) {
 	SPTR_core = core;
+	Grab(SPTR_core);
 	path = name;
 	SPTR_core->Debug(getName(),"Archive open %s ",path.c_str());
 }
 
 CNativeArchive::~CNativeArchive() {
-	// TODO Auto-generated destructor stub
+	Free(SPTR_core);
 }
 
 const Saphire::Core::Types::String CNativeArchive::getName() {
 	return path;
+}
+
+Saphire::Core::Types::size CNativeArchive::getSize()
+{
+	return 0;
 }
 
 Saphire::Core::Files::IFile * CNativeArchive::openFile(Saphire::Core::Types::String path,bool writable)
@@ -33,7 +39,10 @@ Saphire::Core::Files::IFile * CNativeArchive::openFile(Saphire::Core::Types::Str
 	realPath += path;
 
 	SPTR_core->Debug(getName(),"Try open file %s ",realPath.c_str());
-		return new CNativeFile(SPTR_core,realPath,writable);
+	Saphire::Core::Files::IFile * file = new CNativeFile(SPTR_core,realPath,writable);
+	Grab(file);
+
+	return file;
 }
 
 } /* namespace Files */

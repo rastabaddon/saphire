@@ -21,9 +21,11 @@ namespace Saphire {
 				IModule(){};
 				virtual ~IModule(){};
 				virtual Saphire::Core::Types::String getName()=0;
+				virtual const Saphire::Core::Types::String getModuleDescription(){ return "No description"; };
 				virtual bool init() { return false; };
 				virtual bool loop() { return false; };
 				virtual bool shutdown(){ return false; };
+
 		};
 
 

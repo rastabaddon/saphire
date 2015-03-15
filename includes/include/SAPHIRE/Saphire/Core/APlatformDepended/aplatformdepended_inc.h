@@ -13,6 +13,7 @@
 
 	#define Delete(d) if(d) { d->drop(); } d=NULL
 	#define Free(d) if(d) { d->drop(); } d=NULL
+    #define FreeO(d) if(d) { d->drop(); }
 	#define Grab(d) if(d) { d->grab(); }
 
 #endif /* APLATFORMDEPENDED_INC_H_ */

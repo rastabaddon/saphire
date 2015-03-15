@@ -12,11 +12,14 @@ namespace Core {
 namespace Files {
 	CNativeFileSystem::CNativeFileSystem(Saphire::Module::ICoreModule * core) {
 		SPTR_core = core;
+		Grab(SPTR_core);
+		Grab(SPTR_core->getVFS());
 		SPTR_core->getVFS()->registerVFSManager(getName(),this);
 	}
 
 	CNativeFileSystem::~CNativeFileSystem() {
-		// TODO Auto-generated destructor stub
+		Free(SPTR_core);
+		FreeO(SPTR_core->getVFS());
 	}
 
 	bool  CNativeFileSystem::setNativeBaseDir(Saphire::Core::Types::String path)
@@ -81,13 +84,13 @@ namespace Files {
 
 		if(!isDirExists(path)) return NULL;
 
-		for (std::list<Saphire::Core::Files::CNativeArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
+		for (std::list<Saphire::Core::Files::IArchive  *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{
 			 if ((*it)->getName()==realPath) return (*it);
 		}
 
-		Saphire::Core::Files::CNativeArchive * archive = new CNativeArchive(realPath,SPTR_core);
-
+		Saphire::Core::Files::IArchive  * archive = new CNativeArchive(realPath,SPTR_core);
+		Grab(archive);
 		archives.push_front(archive);
 
 		return archive;
@@ -101,7 +104,7 @@ namespace Files {
 
 		SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 		Saphire::Core::Files::IFile * file = NULL;
-		for (std::list<Saphire::Core::Files::CNativeArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
+		for (std::list<Saphire::Core::Files::IArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{
 			file = (*it)->openFile(path,writable);
 			if(file) break;

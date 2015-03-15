@@ -5,19 +5,23 @@
  *      Author: rast
  */
 
-#ifndef CNATIVEFILESYSTEM_H_
-#define CNATIVEFILESYSTEM_H_
+#ifndef CZIPFILESYSTEM_H_
+#define CZIPFILESYSTEM_H_
 #include "../include/inc.h"
-#include "CNativeArchive.h"
+#include "CZipArchive.h"
 
 namespace Saphire {
 namespace Core {
 namespace Files {
 
-	class CNativeFileSystem : public Saphire::Core::Files::IFileSystem {
+	class CZipFileSystem : public Saphire::Core::Files::IFileSystem {
 	public:
-		CNativeFileSystem(Saphire::Module::ICoreModule * core);
-		virtual ~CNativeFileSystem();
+		CZipFileSystem(Saphire::Module::ICoreModule * core);
+		virtual ~CZipFileSystem();
+
+		 const Saphire::Core::Types::String getFileSystemDescription(){
+			 return "Compressed zif file VFS ";
+		 };
 
 		bool  setNativeBaseDir(Saphire::Core::Types::String path);
 		const Saphire::Core::Types::String getName();
@@ -33,11 +37,11 @@ namespace Files {
 		Saphire::Core::Types::String currentPath;
 
 		//Archives
-			Saphire::Core::Types::List<Saphire::Core::Files::CNativeArchive *> archives;
+			Saphire::Core::Types::List<Saphire::Core::Files::IArchive  *> archives;
 	};
 
 }
 } /* namespace Manager */
 } /* namespace Saphire */
 
-#endif /* CNATIVEFILESYSTEM_H_ */
+#endif /* CZIPFILESYSTEM_H_ */
