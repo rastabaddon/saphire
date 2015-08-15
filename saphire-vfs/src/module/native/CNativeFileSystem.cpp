@@ -102,7 +102,7 @@ namespace Files {
 
 		if(!isFileExists(path)) return NULL;
 
-		SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
+		//SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 		Saphire::Core::Files::IFile * file = NULL;
 		for (std::list<Saphire::Core::Files::IArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{

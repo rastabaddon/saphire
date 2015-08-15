@@ -16,12 +16,13 @@ CNativeFile::CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 	Grab(SPTR_core);
 	this->writable = writable;
 	buffer = NULL;
+	this->path.append(path.c_str());
 
 	if(writable)
 	{
-		pFile = fopen(path.c_str(),"r+");
+		pFile = fopen(path.c_str(),"rb+");
 	} else {
-		pFile = fopen(path.c_str(), "r");
+		pFile = fopen(path.c_str(), "rb");
 	}
 
 	if(pFile)
@@ -32,7 +33,7 @@ CNativeFile::CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 		buffer = core->getMemoryManager()->createMemoryBuffer(size);
 		if(buffer)
 		{
-			void *  buff = buffer->getPointer();
+			void *  buff = buffer->getPointer(0);
 			fread(buff, 1, buffer->getSize(), pFile);
 			SPTR_core->Debug("NativeFIle","Open file: %s File size: %i ",path.c_str(),size);
 
@@ -61,6 +62,7 @@ CNativeFile::~CNativeFile() {
 	 if(pFile) fclose(pFile); pFile = NULL;
 	 Free(buffer);
 	 Free(SPTR_core);
+
 }
 
 Saphire::Core::Types::size CNativeFile::getSize() { return buffer->getSize(); }
@@ -80,6 +82,18 @@ bool CNativeFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _c
 	return  buffer->put(pos,_char);
 }
 
+ const Saphire::Core::Types::String  CNativeFile::getName() {
+	return path;
+}
+
+ const Saphire::Core::Types::String CNativeFile::getFileName() {
+ 	return path;
+ }
+
+void * CNativeFile::getPointer(Saphire::Core::Types::size pos)
+{
+	return  buffer->getPointer(pos);
+}
 
 } /* namespace Files */
 } /* namespace Core */

@@ -17,6 +17,7 @@ CMemoryFile::CMemoryFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 	this->writable = writable;
 	buffer = NULL;
 
+	this->path.append(path.c_str());
 
 }
 
@@ -25,6 +26,20 @@ CMemoryFile::~CMemoryFile() {
 
 	 Free(buffer);
 	 Free(SPTR_core);
+
+}
+
+ const Saphire::Core::Types::String  CMemoryFile::getName() {
+	return path;
+}
+
+ const Saphire::Core::Types::String CMemoryFile::getFileName() {
+ 	return path;
+ }
+
+void * CMemoryFile::getPointer(Saphire::Core::Types::size pos)
+{
+	return buffer->getPointer(pos);
 }
 
 Saphire::Core::Types::size CMemoryFile::getSize() { return buffer->getSize(); }

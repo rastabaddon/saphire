@@ -235,7 +235,7 @@
 				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.release.538784552.491934571" name="Windows32" parent="cdt.managedbuild.config.gnu.exe.release">
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.538784552.491934571." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.1720291518" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.989597268" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="mingw32-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.989597268" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="i686-mingw32-" valueType="string"/>
 							<option id="cdt.managedbuild.option.gnu.cross.path.1690469556" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1505690522" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/saphire}/Windows64" id="cdt.managedbuild.builder.gnu.cross.1980568907" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>

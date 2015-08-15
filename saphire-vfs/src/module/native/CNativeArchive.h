@@ -20,11 +20,15 @@ public:
 	virtual ~CNativeArchive();
 
 	const Saphire::Core::Types::String getName();
+	const Saphire::Core::Types::String  getFileName();
 
 	Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable);
 	Saphire::Core::Types::size getSize();
 
+	void * getPointer(Saphire::Core::Types::size pos=0);
+
 private:
+	Saphire::Core::Types::String name;
 	Saphire::Core::Types::String path;
 	Saphire::Module::ICoreModule * SPTR_core;
 };

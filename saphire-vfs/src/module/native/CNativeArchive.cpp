@@ -15,16 +15,28 @@ CNativeArchive::CNativeArchive(Saphire::Core::Types::String name,Saphire::Module
 	SPTR_core = core;
 	Grab(SPTR_core);
 	path = name;
-	SPTR_core->Debug(getName(),"Archive open %s ",path.c_str());
+	this->name = "NFS";
+	SPTR_core->Debug(this->name,"Archive open %s ",path.c_str());
 }
 
 CNativeArchive::~CNativeArchive() {
 	Free(SPTR_core);
 }
 
+
+void * CNativeArchive::getPointer(Saphire::Core::Types::size pos)
+{
+	return NULL;
+}
+
 const Saphire::Core::Types::String CNativeArchive::getName() {
 	return path;
 }
+
+const Saphire::Core::Types::String  CNativeArchive::getFileName(){
+	return path;
+}
+
 
 Saphire::Core::Types::size CNativeArchive::getSize()
 {
@@ -38,7 +50,7 @@ Saphire::Core::Files::IFile * CNativeArchive::openFile(Saphire::Core::Types::Str
 	Saphire::Core::Types::String realPath = this->path;
 	realPath += path;
 
-	SPTR_core->Debug(getName(),"Try open file %s ",realPath.c_str());
+	//SPTR_core->Debug(getName(),"Try open file %s ",realPath.c_str());
 	Saphire::Core::Files::IFile * file = new CNativeFile(SPTR_core,realPath,writable);
 	Grab(file);
 

@@ -31,17 +31,15 @@ namespace Module {
 
 			ZIPFS = new Saphire::Core::Files::CZipFileSystem(SPTR_core);
 			addArchive("/pack.zip");
+			addArchive("/pack1.zip");
+			addArchive("/pack2.zip");
+			addArchive("/pack3.zip");
+			addArchive("/pack4.zip");
 
 			Saphire::Core::Files::IFile * file = openFile("/text.txt",true);
 
-/*
 
-			if(file)
-			{
-
-
-				Delete(file);
-			}*/
+			Free(file);
 		}
 
 		CSaphireVFS::~CSaphireVFS() {
@@ -69,11 +67,13 @@ namespace Module {
 
 		Saphire::Core::Files::IFile * CSaphireVFS::openFile(Saphire::Core::Types::String path,bool writable)
 		{
-			SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
+			//SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 			Saphire::Core::Files::IFile * file = NULL;
 
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 			{
+
+				//SPTR_core->Debug(getName(),"Check in %s ",(*it)->getName().c_str());
 				file = (*it)->openFile(path,writable);
 				if(file) { break; }
 			}
@@ -87,11 +87,11 @@ namespace Module {
 
 		Saphire::Core::Files::IArchive * CSaphireVFS::addArchive(Saphire::Core::Types::String path)
 		{
-			Saphire::Core::Types::String vpath;
-			Saphire::Core::Types::String npath;
-			Saphire::Core::Types::String test = path.substr(0,1);
+		//	Saphire::Core::Types::String vpath;
+		//	Saphire::Core::Types::String npath;
+		//	Saphire::Core::Types::String test = path.substr(0,1);
 
-			SPTR_core->Debug(getName(),"Add %s ",path.c_str());
+		//	SPTR_core->Debug(getName(),"Add %s ",path.c_str());
 
 			Saphire::Core::Files::IArchive * archive = NULL;
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)

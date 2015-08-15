@@ -18,25 +18,89 @@ CZipArchive::CZipArchive(Saphire::Core::Types::String name,Saphire::Module::ICor
 	SPTR_core->Debug(getName(),"Archive open %s ",path.c_str());
 	//Is open as normal file
 	zipFile = SPTR_core->getVFS()->openFile(path,true);
+
+
+
 	Saphire::Core::Types::size  size = (zipFile->get(zipFile->getSize()-3) << 24) | (zipFile->get(zipFile->getSize()-2) << 16) + (zipFile->get(zipFile->getSize()-1) << 8) + zipFile->get(zipFile->getSize());
 
-	SPTR_core->Debug(getName(),"0 %i %i ",0,zipFile->get(0));
-	SPTR_core->Debug(getName(),"A %i %i",zipFile->getSize()-3,zipFile->get(zipFile->getSize()-3));
-	SPTR_core->Debug(getName(),"B %i %i",zipFile->getSize()-2,zipFile->get(zipFile->getSize()-2));
-	SPTR_core->Debug(getName(),"C %i %i",zipFile->getSize()-1,zipFile->get(zipFile->getSize()-1));
-	SPTR_core->Debug(getName(),"D %i %i",zipFile->getSize(),zipFile->get(zipFile->getSize()));
 
-	SPTR_core->Debug(getName(),"Required buffer size %i ",size);
+	SZIP_FILE_HEADER * fileHeader = NULL;
+	SZIP_FILE_DATA * dataHeader;
 
+	Saphire::Core::Types::String text;
+	 char * text_p;
+	 void  * data_p;
+	 void * extra_p;
+	 Saphire::Core::Files::CZipFile * vzipFile;
+
+	 for(int i=0; i<zipFile->getSize();i++)
+	 {
+		 fileHeader = (SZIP_FILE_HEADER *)zipFile->getPointer(i);
+		 if(fileHeader->signature == 0X4034B50) {
+
+		/*
+		 SPTR_core->Debug(getName(),"file header SIGNATURE %#4lX ",fileHeader->signature);
+		 SPTR_core->Debug(getName(),"VERSION %#2X ",fileHeader->version);
+		 SPTR_core->Debug(getName(),"GPB %#2X ",fileHeader->generalPurposeBitFlag);
+		 SPTR_core->Debug(getName(),"Compresed method %#2X ",fileHeader->compressionMethod);
+		 SPTR_core->Debug(getName(),"TIME %#2X ",fileHeader->modTime);
+		 SPTR_core->Debug(getName(),"DATE %#2X ",fileHeader->modDate);
+		 SPTR_core->Debug(getName(),"CRC %#4lX ",fileHeader->CRC);
+
+		 SPTR_core->Debug(getName(),"Compresed size %llu bytes %#4lX",fileHeader->compressedSize,fileHeader->compressedSize);
+		 SPTR_core->Debug(getName(),"Uncompresed size %llu bytes %#4lX",fileHeader->uncompressedSize,fileHeader->uncompressedSize);
+
+		 SPTR_core->Debug(getName(),"FILE NAME SIZE %lu %#4lX",fileHeader->fileNameSize,fileHeader->fileNameSize);
+		 SPTR_core->Debug(getName(),"EXTRA SIZE %lu %#4lX",fileHeader->ExtraFieldName,fileHeader->ExtraFieldName);
+*/
+		 text_p = (char *)zipFile->getPointer(i+30);
+		 extra_p = (char *)zipFile->getPointer(i+30+fileHeader->fileNameSize);
+		 dataHeader = (SZIP_FILE_DATA *)zipFile->getPointer(i+30+fileHeader->fileNameSize+fileHeader->ExtraFieldName);
+
+		 text.append("/");
+		 text.append(text_p,fileHeader->fileNameSize);
+
+
+
+
+
+		 vzipFile = new Saphire::Core::Files::CZipFile(SPTR_core,text,false,this,fileHeader->compressionMethod,zipFile->getPointer(i+30+fileHeader->fileNameSize+fileHeader->ExtraFieldName),fileHeader->compressedSize,fileHeader->uncompressedSize);
+
+		 files.push_back(vzipFile);
+		 i = i+30+fileHeader->fileNameSize+fileHeader->ExtraFieldName+fileHeader->compressedSize-1;
+		 text.clear();
+
+
+
+		 } else {
+			 //SPTR_core->Debug(getName(),"Central directory file header SIGNATURE %#4lX ignore now",fileHeader->signature);
+			 break;
+		 }
+	 }
+
+
+	 text_p = NULL;
+	 SPTR_core->Debug(getName(),"FREE MEMORY HERE");
+	 SPTR_core->Debug(getName(),"HERE %i",zipFile->getRefCount());
+	 Free(zipFile);
 
 }
 
 CZipArchive::~CZipArchive() {
-	Free(zipFile);
+
 	Free(SPTR_core);
 }
 
+void * CZipArchive::getPointer(Saphire::Core::Types::size pos)
+{
+	return NULL;
+}
+
 const Saphire::Core::Types::String CZipArchive::getName() {
+	return path;
+}
+
+const Saphire::Core::Types::String CZipArchive::getFIleName() {
 	return path;
 }
 
@@ -45,18 +109,35 @@ Saphire::Core::Types::size CZipArchive::getSize()
 	return 0;
 }
 
+
+bool  CZipArchive::isFileExists(const Saphire::Core::Types::String & name)
+{
+	//SPTR_core->Debug(getName(),"Test1 file %s ",name.c_str());
+	 for (std::list<Saphire::Core::Files::CZipFile *>::iterator it=files.begin(); it != files.end(); ++it)
+	{
+		    //SPTR_core->Debug(getName(),"TEST: file [%s] = [%s]",(*it)->getName().c_str(),name.c_str());
+			if((*it)->getFileName()==name) return true;
+	}
+
+	return false;
+}
+
+bool  CZipArchive::isDirExists(const Saphire::Core::Types::String & name)
+		{
+	SPTR_core->Debug(getName(),"Test2 file %s ",name.c_str());
+	return false;
+		}
+
 Saphire::Core::Files::IFile * CZipArchive::openFile(Saphire::Core::Types::String path,bool writable)
 {
 
+	for (std::list<Saphire::Core::Files::CZipFile *>::iterator it=files.begin(); it != files.end(); ++it)
+	{
 
-	//Saphire::Core::Types::String realPath = this->path;
-	//realPath += path;
+			if((*it)->getFileName()==path) { (*it)->grab(); return (*it); }
+	}
 
-	//SPTR_core->Debug(getName(),"Try open file %s ",realPath.c_str());
-	//Saphire::Core::Files::IFile * file = new CZipFile(SPTR_core,realPath,writable);
-	//Grab(file);
-
-	//return file;
+	return NULL;
 }
 
 } /* namespace Files */

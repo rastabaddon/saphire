@@ -25,7 +25,16 @@ CMemoryArchive::~CMemoryArchive() {
 	Free(SPTR_core);
 }
 
+void * CMemoryArchive::getPointer(Saphire::Core::Types::size pos)
+{
+	return NULL;
+}
+
 const Saphire::Core::Types::String CMemoryArchive::getName() {
+	return path;
+}
+
+const Saphire::Core::Types::String CMemoryArchive::getFileName() {
 	return path;
 }
 

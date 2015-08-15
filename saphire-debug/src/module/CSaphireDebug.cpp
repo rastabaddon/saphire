@@ -27,10 +27,15 @@ namespace Module {
 			return Saphire::Core::Types::String("saphire-debug");
 		}
 
+
 		Saphire::Core::Types::String CSaphireDebug::toStringColor(int attr,int fg,int bg)
 		{
 			char buffer[256];
-			snprintf (buffer,255,"%c[%d;%d;%dm", 0x1B, attr, fg + 30, bg + 40);
+		//	if(bg<8) {
+				snprintf (buffer,255,"%c[%d;%d;%dm", 0x1B, attr, fg + 30, bg + 40);
+			//} else {
+			//	snprintf (buffer,255,"%c[%d;%d", 0x1B, attr, fg + 30);
+			//}
 			return 	Saphire::Core::Types::String(buffer);
 		}
 
@@ -48,15 +53,16 @@ namespace Module {
 				output.append(buffer,256);
 
 
-				 info = toStringColor(RESET ,GREEN,BBLACK);
+				 info = toStringColor(RESET ,GREEN);
 						 info += "[";
 						 info += where;
 						 info += "]";
-						 Saphire::Core::Types::String color = toStringColor(RESET ,WHITE,BBLACK);
+
+						 Saphire::Core::Types::String color = toStringColor(RESET ,WHITE);
 						 info += color;
 						 info += " ";
 
-						printf ("%s%s \n",info.c_str(),output.c_str());
+						printf ("#%s%s \n",info.c_str(),output.c_str());
 
 				return;
 /*

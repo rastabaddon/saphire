@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
 	Saphire::Boot::BootClass * s = new Saphire::Boot::BootClass();
 
-	int ret = s->execute("../../","saphire-core","",argc,argv);
+	int ret = s->execute("./","saphire-core","",argc,argv);
 	delete s;
 
 	return ret;

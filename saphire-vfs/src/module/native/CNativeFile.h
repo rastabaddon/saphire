@@ -28,12 +28,18 @@ public:
 	 * Write a byte
 	 */
 	bool put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char);
+
+	void * getPointer(Saphire::Core::Types::size pos=0);
+	const Saphire::Core::Types::String  getName();
+	const Saphire::Core::Types::String  getFileName();
+
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
 	FILE * pFile;
 	bool writable;
 	Saphire::Core::Types::IMemoryBuffer * buffer;
 	Saphire::Core::Types::size size;
+	Saphire::Core::Types::String path;
 };
 
 } /* namespace Files */

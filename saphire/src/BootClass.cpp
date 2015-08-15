@@ -24,6 +24,14 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 	std::string program;
 	std::string bits = "64";
 	std::string ext = "";
+    bool debug=false;
+
+	for (int i = 0; i < argc; ++i) {
+		printf("Starting: %s\n\r",argv[i]);
+		if(strcmp(argv[i],"debug")==0) {
+			debug = true;
+		}
+    };
 
 	#ifdef _WIN32
 		baseDir += "\\bin\\windows";
@@ -43,12 +51,18 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 	baseDir += bits;
 	baseDir += "/";
 
-	//printf("Get in to dir: %s\n\r",baseDir.c_str());
+	printf("Get in to dir: %s\n\r",baseDir.c_str());
 
 	chdir(baseDir.c_str());
     baseDir = getcwd (NULL,0);
+    program = "";
 
-	program = baseDir;
+    if(debug)
+    {
+    	program = "gdb  --nx -ex=r ";
+    }
+
+	program += baseDir;
 
 
 #ifndef _WIN32
@@ -65,8 +79,8 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 		setenv("LD_LIBRARY_PATH", baseDir.c_str(),0);
 	#endif
 
-	//printf("Base dir: %s\n\r",baseDir.c_str());
-	//printf("Starting: %s\n\r",program.c_str());
+	printf("Base dir: %s\n\r",baseDir.c_str());
+	printf("Starting: %s\n\r",program.c_str());
 
 
 	int ret = system(program.c_str());

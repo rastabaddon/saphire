@@ -32,10 +32,11 @@ Saphire::Core::Types::IMemoryBuffer * CSaphireMemory::createMemoryBuffer(Saphire
 void* CSaphireMemory::allocate (size_t size)
 {
 	void * pointer = malloc(size);;
+	memset(pointer,0,size);
 	return pointer;
 }
 
-void CSaphireMemory::deallocate (void* pointerToDelete){
+void CSaphireMemory::deallocate (void * pointerToDelete){
 	free(pointerToDelete);
 }
 
