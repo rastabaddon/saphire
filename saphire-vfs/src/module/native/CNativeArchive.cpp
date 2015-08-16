@@ -33,8 +33,8 @@ const Saphire::Core::Types::String CNativeArchive::getName() {
 	return path;
 }
 
-const Saphire::Core::Types::String  CNativeArchive::getFileName(){
-	return path;
+const Saphire::Core::Types::String  CNativeArchive::getDebugName(){
+	return name;
 }
 
 

@@ -19,12 +19,12 @@ namespace Files {
 		CZipFileSystem(Saphire::Module::ICoreModule * core);
 		virtual ~CZipFileSystem();
 
-		 const Saphire::Core::Types::String getFileSystemDescription(){
-			 return "Compressed zif file VFS ";
-		 };
+		 const Saphire::Core::Types::String getFileSystemDescription();
 
 		bool  setNativeBaseDir(Saphire::Core::Types::String path);
+		const Saphire::Core::Types::String getDebugName();
 		const Saphire::Core::Types::String getName();
+
 		bool  isFileExists(const Saphire::Core::Types::String & name);
 		bool  isDirExists(const Saphire::Core::Types::String & name);
 
@@ -32,12 +32,16 @@ namespace Files {
 
 		Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable);
 
+
+		 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> scanDir(Saphire::Core::Types::String path);
+
 	private:
 		Saphire::Module::ICoreModule * SPTR_core;
 		Saphire::Core::Types::String currentPath;
 
 		//Archives
 			Saphire::Core::Types::List<Saphire::Core::Files::IArchive  *> archives;
+
 	};
 
 }

@@ -23,8 +23,15 @@ CMemoryFileSystem::~CMemoryFileSystem() {
 	}
 
 
+const Saphire::Core::Types::String CMemoryFileSystem::getFileSystemDescription(){
+	 return "Memory file system";
+};
 
 	const Saphire::Core::Types::String CMemoryFileSystem::getName() {
+		return "MEMORY";
+	}
+
+	const Saphire::Core::Types::String CMemoryFileSystem::getDebugName() {
 		return "MEMORY";
 	}
 
@@ -103,6 +110,12 @@ CMemoryFileSystem::~CMemoryFileSystem() {
 		}
 
 		return file;
+	}
+
+	Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> CMemoryFileSystem::scanDir(Saphire::Core::Types::String path)
+	{
+		 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> list;
+		 return list;
 	}
 }
 } /* namespace Manager */

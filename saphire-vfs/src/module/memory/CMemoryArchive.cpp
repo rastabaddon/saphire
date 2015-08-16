@@ -15,7 +15,7 @@ CMemoryArchive::CMemoryArchive(Saphire::Core::Types::String name,Saphire::Module
 	SPTR_core = core;
 	Grab(SPTR_core);
 	path = name;
-	SPTR_core->Debug(getName(),"Archive open %s ",path.c_str());
+	SPTR_core->Debug(getDebugName(),"Archive open %s ",path.c_str());
 	//Directory
 	root = new CMemoryRecord(path,NULL,NULL);
 	records.push_back(root);
@@ -34,8 +34,8 @@ const Saphire::Core::Types::String CMemoryArchive::getName() {
 	return path;
 }
 
-const Saphire::Core::Types::String CMemoryArchive::getFileName() {
-	return path;
+const Saphire::Core::Types::String CMemoryArchive::getDebugName() {
+	return "CMemoryArchive";
 }
 
 Saphire::Core::Types::size CMemoryArchive::getSize()

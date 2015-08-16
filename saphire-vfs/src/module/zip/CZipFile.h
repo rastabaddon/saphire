@@ -38,7 +38,7 @@ public:
 	void * getPointer(Saphire::Core::Types::size pos);
 
 	const Saphire::Core::Types::String getName();
-	const Saphire::Core::Types::String getFileName();
+	const Saphire::Core::Types::String getDebugName();
 
 	Saphire::Core::Types::s8 getStatus();
 

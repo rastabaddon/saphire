@@ -26,15 +26,13 @@ namespace Module {
 			((Saphire::Core::Files::CNativeFileSystem *)NFS)->setNativeBaseDir(path);
 			addArchive("/");
 
-			ZIPFS = new Saphire::Core::Files::CMemoryFileSystem(SPTR_core);
+			MEMORYFS = new Saphire::Core::Files::CMemoryFileSystem(SPTR_core);
 			addArchive("/");
 
 			ZIPFS = new Saphire::Core::Files::CZipFileSystem(SPTR_core);
-			addArchive("/pack.zip");
-			addArchive("/pack1.zip");
-			addArchive("/pack2.zip");
-			addArchive("/pack3.zip");
-			addArchive("/pack4.zip");
+
+
+
 
 			Saphire::Core::Files::IFile * file = openFile("/text.txt",true);
 
@@ -45,6 +43,8 @@ namespace Module {
 		CSaphireVFS::~CSaphireVFS() {
 			Free(SPTR_core);
 		}
+
+
 
 			bool  CSaphireVFS::isFileExists(const Saphire::Core::Types::String & path)
 			{
@@ -65,6 +65,23 @@ namespace Module {
 				 return false;
 			}
 
+		Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> CSaphireVFS::scanDir(Saphire::Core::Types::String path)
+		{
+			Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> files;
+			Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> tmp_files;
+
+			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
+			{
+					tmp_files = (*it)->scanDir(path);
+					for (Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry>::iterator itA=tmp_files.begin(); itA != tmp_files.end(); ++itA)
+					{
+							files.push_back((*itA));
+					}
+			}
+
+			return files;
+		}
+
 		Saphire::Core::Files::IFile * CSaphireVFS::openFile(Saphire::Core::Types::String path,bool writable)
 		{
 			//SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
@@ -72,14 +89,12 @@ namespace Module {
 
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 			{
-
-				//SPTR_core->Debug(getName(),"Check in %s ",(*it)->getName().c_str());
 				file = (*it)->openFile(path,writable);
 				if(file) { break; }
 			}
 
 			if(!file) {
-				SPTR_core->Debug(getName(),"Can`t open file %s ",path.c_str());
+				SPTR_core->Debug(getDebugName(),"Can`t open file %s ",path.c_str());
 			}
 
 			return file;
@@ -87,11 +102,6 @@ namespace Module {
 
 		Saphire::Core::Files::IArchive * CSaphireVFS::addArchive(Saphire::Core::Types::String path)
 		{
-		//	Saphire::Core::Types::String vpath;
-		//	Saphire::Core::Types::String npath;
-		//	Saphire::Core::Types::String test = path.substr(0,1);
-
-		//	SPTR_core->Debug(getName(),"Add %s ",path.c_str());
 
 			Saphire::Core::Files::IArchive * archive = NULL;
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
@@ -100,7 +110,7 @@ namespace Module {
 				if(archive) { break; }
 			}
 			if(!archive) {
-				SPTR_core->Debug(getName(),"Can`t open archive: %s ",path.c_str());
+				SPTR_core->Debug(getDebugName(),"Can`t open archive: %s ",path.c_str());
 			return NULL; }
 
 
@@ -128,12 +138,12 @@ namespace Module {
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 			{
 				if((*it)->getName()==name) {
-					SPTR_core->Debug(getName(),"Can`t register %s , name exists.",name.c_str());
+					SPTR_core->Debug(getDebugName(),"Can`t register %s , name exists.",name.c_str());
 					return false;
 				}
 			}
 
-			SPTR_core->Debug(getName(),"registered new vfs `%s` : `%s` ",name.c_str(),fileSystem->getFileSystemDescription().c_str());
+			SPTR_core->Debug(getDebugName(),"registered new vfs `%s` : `%s` ",name.c_str(),fileSystem->getFileSystemDescription().c_str());
 			Grab(fileSystem);
 			fileSystems.push_front(fileSystem);
 
@@ -143,15 +153,19 @@ namespace Module {
 		Saphire::Module::IModule * CSaphireVFS::addVFSManager(Saphire::Core::Types::String name)
 		{
 			Saphire::Module::IModule * module = NULL;
-			SPTR_core->Debug(getName(),"UNSUPORTED addVFSManager. Can`t add %s ",name.c_str());
+			SPTR_core->Debug(getDebugName(),"UNSUPORTED addVFSManager. Can`t add %s ",name.c_str());
 
 			return module;
 		}
 
-		Saphire::Core::Types::String CSaphireVFS::getName()
+		const Saphire::Core::Types::String CSaphireVFS::getModuleName()
 		{
-			return Saphire::Core::Types::String("saphire-vfs");
+			return "saphire-vfs";
 		}
 
+		const Saphire::Core::Types::String CSaphireVFS::getDebugName()
+		{
+			return "saphire-vfs";
+		}
 } /* namespace Manager */
 } /* namespace Saphire */

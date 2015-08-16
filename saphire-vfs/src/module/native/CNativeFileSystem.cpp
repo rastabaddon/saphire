@@ -40,13 +40,16 @@ namespace Files {
 		return "NFS";
 	}
 
+	const Saphire::Core::Types::String CNativeFileSystem::getDebugName() {
+		return "NFS";
+	}
+
 	inline bool  CNativeFileSystem::isFileExists(const Saphire::Core::Types::String & name)
 	{
 
 	  struct stat info;
 
-		  Saphire::Core::Types::String path = currentPath;
-		  path += name;
+	  	  Saphire::Core::Types::String path = currentPath + name;
 
 
 		  if( stat( path.c_str(), &info ) != 0 ) {
@@ -61,8 +64,8 @@ namespace Files {
 	{
 		  struct stat info;
 
-			  Saphire::Core::Types::String path = currentPath;
-			  path += name;
+
+			  Saphire::Core::Types::String path = currentPath + name;
 
 
 
@@ -96,6 +99,43 @@ namespace Files {
 		return archive;
 	}
 
+	Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> CNativeFileSystem::scanDir(Saphire::Core::Types::String path)
+	{
+
+		Saphire::Core::Types::String _path = currentPath + path;
+		Saphire::Core::Types::String _work;
+
+		Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> list;
+
+		DIR *dir;
+		struct dirent *ent;
+
+
+		if ((dir = opendir (_path.c_str())) != NULL) {
+		  /* print all the files and directories within directory */
+		  while ((ent = readdir (dir)) != NULL) {
+
+			  _work = _path +  ent->d_name;
+
+			  struct stat info;
+			  stat( _work.c_str(), &info );
+			  if( info.st_mode & S_IFDIR )
+			  {
+				  //printf ("DIR %s[%s] %u %i \n", ent->d_name,_work.c_str(),info.st_mode,info.st_size );
+				  list.push_back(Saphire::Core::Files::IDirEntry(ent->d_name,path+ent->d_name,TDIR_ENTRY::TDIR));
+			  } else {
+				  //printf ("FILE %s[%s] %u %i \n", ent->d_name,_work.c_str(),info.st_mode,info.st_size );
+				  list.push_back(Saphire::Core::Files::IDirEntry(ent->d_name,path+ent->d_name,TDIR_ENTRY::TFILE));
+			  }
+
+
+
+		  }
+		  closedir (dir);
+		}
+
+		return list;
+	}
 
 	Saphire::Core::Files::IFile * CNativeFileSystem::openFile(Saphire::Core::Types::String path,bool writable)
 	{

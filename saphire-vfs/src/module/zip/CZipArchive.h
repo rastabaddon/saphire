@@ -53,7 +53,7 @@ public:
 	virtual ~CZipArchive();
 
 	const Saphire::Core::Types::String getName();
-	const Saphire::Core::Types::String getFIleName();
+	const Saphire::Core::Types::String getDebugName();
 
 	Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable);
 	Saphire::Core::Types::size getSize();

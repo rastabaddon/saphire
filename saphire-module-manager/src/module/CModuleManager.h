@@ -18,7 +18,8 @@ public:
 	CModuleManager(Saphire::Module::ICoreModule * core);
 	virtual ~CModuleManager();
 
-	Saphire::Core::Types::String getName();
+	const Saphire::Core::Types::String getModuleName();
+	const Saphire::Core::Types::String getDebugName();
 	Saphire::Module::IModule * load (Saphire::Core::Types::String name);
 	Saphire::Module::IModule * getModule (Saphire::Core::Types::String name);
 private:

@@ -15,15 +15,42 @@ namespace Module {
 		CSaphirePlatform::CSaphirePlatform(Saphire::Module::ICoreModule * core) {
 			SPTR_core = core;
 
-			Saphire::Core::CSignal * signal = new Saphire::Core::CSignal(core);
+			signal = new Saphire::Core::CSignal(core);
 
 
-			SPTR_core->Debug(getName(),"%s","Init");
-			//printf("OPEN PLATFORM %p \n",SPTR_core);
+			Saphire::Core::Types::String bits = "64";
+			platformDirectory = "/";
+
+			#ifdef _WIN32
+			platformDirectory += "\\bin\\windows";
+			#else
+			platformDirectory += "bin/linux";
+			#endif
+
+			#ifndef _WIN32
+					platformDirectory += "/";
+			#else
+					platformDirectory += "\\";
+			#endif
+
+			#ifdef ENVIRONMENT32
+				platformDirectory += "32";
+			#else
+				platformDirectory += "64";
+			#endif
+
+
+		 #ifndef _WIN32
+				platformDirectory += "/";
+		 #else
+				platformDirectory += "\\";
+		 #endif
+
+
 		}
 
 		CSaphirePlatform::~CSaphirePlatform() {
-
+			Free(signal);
 		}
 
 		 Saphire::Core::ILibrary * CSaphirePlatform::openLibrary(Saphire::Core::Types::String name)
@@ -31,10 +58,20 @@ namespace Module {
 			 	 return NULL;
 		 }
 
-		Saphire::Core::Types::String CSaphirePlatform::getName()
+
+		 const Saphire::Core::Types::String CSaphirePlatform::getPlatformDirectory()
+		 {
+			 	 return platformDirectory;
+		 }
+
+		const Saphire::Core::Types::String CSaphirePlatform::getDebugName()
 		{
-			return Saphire::Core::Types::String("saphire-platform");
+			return"saphire-platform";
 		}
 
+		const Saphire::Core::Types::String CSaphirePlatform::getModuleName()
+		{
+			return"saphire-platform";
+		}
 } /* namespace Manager */
 } /* namespace Saphire */

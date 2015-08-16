@@ -33,8 +33,8 @@ CMemoryFile::~CMemoryFile() {
 	return path;
 }
 
- const Saphire::Core::Types::String CMemoryFile::getFileName() {
- 	return path;
+ const Saphire::Core::Types::String CMemoryFile::getDebugName() {
+ 	return "CMemoryFile";
  }
 
 void * CMemoryFile::getPointer(Saphire::Core::Types::size pos)

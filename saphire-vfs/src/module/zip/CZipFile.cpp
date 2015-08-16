@@ -92,12 +92,12 @@ Saphire::Core::Types::s8 CZipFile::getStatus()
 	return status;
 }
 
-const Saphire::Core::Types::String CZipFile::getFileName() {
-	return path;
+const Saphire::Core::Types::String CZipFile::getDebugName() {
+	return "CZipFile";
 }
 
 const Saphire::Core::Types::String  CZipFile::getName() {
-	return name;
+	return path;
 }
 
 void * CZipFile::getPointer(Saphire::Core::Types::size pos)

@@ -23,7 +23,9 @@ public:
 
 	void init(Saphire::Core::Types::String path);
 
-	Saphire::Core::Types::String getName();
+	const Saphire::Core::Types::String getModuleName();
+	const Saphire::Core::Types::String getDebugName();
+
 	bool registerVFSManager(Saphire::Core::Types::String name,Saphire::Core::Files::IFileSystem * fileSystem);
 	Saphire::Module::IModule * addVFSManager(Saphire::Core::Types::String name);
 	Saphire::Core::Files::IFileSystem *  getVFSManager(Saphire::Core::Types::String name);
@@ -35,6 +37,7 @@ public:
 	Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable=false);
 	 bool  isFileExists(const Saphire::Core::Types::String & name);
 	 bool  isDirExists(const Saphire::Core::Types::String & name);
+	 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> scanDir(Saphire::Core::Types::String path);
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;

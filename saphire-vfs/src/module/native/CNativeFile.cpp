@@ -16,6 +16,8 @@ CNativeFile::CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 	Grab(SPTR_core);
 	this->writable = writable;
 	buffer = NULL;
+	name = "CNativeFile";
+
 	this->path.append(path.c_str());
 
 	if(writable)
@@ -38,15 +40,14 @@ CNativeFile::CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 			SPTR_core->Debug("NativeFIle","Open file: %s File size: %i ",path.c_str(),size);
 
 		} else {
-			buffer = NULL;
+			Free(buffer);
 			size=0;
 			this->writable = false;
 			SPTR_core->Debug("NativeFIle","Can`t create buffer");
 		}
 	} else {
+		Free(buffer);
 
-		buffer->drop();
-		buffer = NULL;
 		this->writable = false;
 		SPTR_core->Debug("NativeFIle","Cant open file ",path.c_str());
 	}
@@ -86,8 +87,8 @@ bool CNativeFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _c
 	return path;
 }
 
- const Saphire::Core::Types::String CNativeFile::getFileName() {
- 	return path;
+ const Saphire::Core::Types::String CNativeFile::getDebugName() {
+ 	return name;
  }
 
 void * CNativeFile::getPointer(Saphire::Core::Types::size pos)

@@ -32,7 +32,7 @@ public:
 
 private:
 	Saphire::Module::IMemoryModule * mm;
-	Saphire::Core::Types::u8 * memoryPointer;
+	Saphire::Core::Types::pointer  memoryPointer;
 	Saphire::Core::Types::size size;
 };
 

@@ -20,7 +20,9 @@ namespace Module {
 			CSaphireDebug(Saphire::Module::ICoreModule * core);
 			virtual ~CSaphireDebug();
 
-			Saphire::Core::Types::String getName();
+			const Saphire::Core::Types::String getDebugName();
+			const Saphire::Core::Types::String getModuleName();
+
 			void Debug(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... );
 
 		private:

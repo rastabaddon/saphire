@@ -22,11 +22,16 @@ namespace Module {
 
 		}
 
-		Saphire::Core::Types::String CSaphireDebug::getName()
+		const Saphire::Core::Types::String CSaphireDebug::getDebugName()
 		{
-			return Saphire::Core::Types::String("saphire-debug");
+			return "saphire-debug";
 		}
 
+
+		const Saphire::Core::Types::String CSaphireDebug::getModuleName()
+		{
+			return "saphire-debug";
+		}
 
 		Saphire::Core::Types::String CSaphireDebug::toStringColor(int attr,int fg,int bg)
 		{

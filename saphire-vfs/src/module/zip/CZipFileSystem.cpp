@@ -14,7 +14,7 @@ CZipFileSystem::CZipFileSystem(Saphire::Module::ICoreModule * core) {
 		SPTR_core = core;
 		Grab(SPTR_core);
 		Grab(SPTR_core->getVFS());
-		SPTR_core->getVFS()->registerVFSManager(getName(),this);
+		SPTR_core->getVFS()->registerVFSManager(getDebugName(),this);
 	}
 
 	CZipFileSystem::~CZipFileSystem() {
@@ -26,14 +26,22 @@ CZipFileSystem::CZipFileSystem(Saphire::Module::ICoreModule * core) {
 	{
 		if(chdir(path.c_str())!=0)
 		{
-			SPTR_core->Debug(getName(),"Error set current dir %s ",path.c_str());
+			SPTR_core->Debug(getDebugName(),"Error set current dir %s ",path.c_str());
 		}
 		currentPath = getcwd (NULL,0);
 
-		SPTR_core->Debug(getName(),"Current dir is %s ",currentPath.c_str());
+		SPTR_core->Debug(getDebugName(),"Current dir is %s ",currentPath.c_str());
 
 
 		return true;
+	}
+
+	 const Saphire::Core::Types::String CZipFileSystem::getFileSystemDescription(){
+				 return "Compressed zif file VFS ";
+			 };
+
+	const Saphire::Core::Types::String CZipFileSystem::getDebugName() {
+		return "ZIPFS";
 	}
 
 	const Saphire::Core::Types::String CZipFileSystem::getName() {
@@ -95,7 +103,7 @@ CZipFileSystem::CZipFileSystem(Saphire::Module::ICoreModule * core) {
 
 	    } else {
 			Delete(zipFile);
-			 SPTR_core->Debug(getName(),"File %s it`s not a ZIP Archive",path.c_str());
+			 SPTR_core->Debug(getDebugName(),"File %s it`s not a ZIP Archive",path.c_str());
 	    }
 
 		return archive;
@@ -117,10 +125,16 @@ CZipFileSystem::CZipFileSystem(Saphire::Module::ICoreModule * core) {
 		}
 
 		if(!file) {
-					SPTR_core->Debug(getName(),"Can`t open file %s ",path.c_str());
+					SPTR_core->Debug(getDebugName(),"Can`t open file %s ",path.c_str());
 		}
 
 		return file;
+	}
+
+	 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> CZipFileSystem::scanDir(Saphire::Core::Types::String path)
+	{
+		 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> list;
+		 return list;
 	}
 }
 } /* namespace Manager */

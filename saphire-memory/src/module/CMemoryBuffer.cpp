@@ -15,7 +15,7 @@ CMemoryBuffer::CMemoryBuffer(Saphire::Module::IMemoryModule * mm,Saphire::Core::
 	this->mm = mm;
 	Grab(this->mm);
 	this->size = size;
-	memoryPointer = (Saphire::Core::Types::u8 *)this->mm->allocate(size);
+	memoryPointer = this->mm->allocate(size);
 	//printf("Create memory %X %u \n",memoryPointer,size);
 	if(!memoryPointer)  { this->size = 0;
 		throw std::bad_alloc();
@@ -23,7 +23,7 @@ CMemoryBuffer::CMemoryBuffer(Saphire::Module::IMemoryModule * mm,Saphire::Core::
 }
 
 CMemoryBuffer::~CMemoryBuffer() {
-	printf("Free memory %X %u \n",memoryPointer,size);
+	//printf("Free memory %p %u \n",memoryPointer,(unsigned int)size);
 	this->size=0;
 	this->mm->deallocate(memoryPointer);
 	memoryPointer = NULL;

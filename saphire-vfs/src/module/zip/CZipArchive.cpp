@@ -100,8 +100,8 @@ const Saphire::Core::Types::String CZipArchive::getName() {
 	return path;
 }
 
-const Saphire::Core::Types::String CZipArchive::getFIleName() {
-	return path;
+const Saphire::Core::Types::String CZipArchive::getDebugName() {
+	return "CZipArchive";
 }
 
 Saphire::Core::Types::size CZipArchive::getSize()
@@ -116,7 +116,7 @@ bool  CZipArchive::isFileExists(const Saphire::Core::Types::String & name)
 	 for (std::list<Saphire::Core::Files::CZipFile *>::iterator it=files.begin(); it != files.end(); ++it)
 	{
 		    //SPTR_core->Debug(getName(),"TEST: file [%s] = [%s]",(*it)->getName().c_str(),name.c_str());
-			if((*it)->getFileName()==name) return true;
+			if((*it)->getName()==name) return true;
 	}
 
 	return false;
@@ -134,7 +134,7 @@ Saphire::Core::Files::IFile * CZipArchive::openFile(Saphire::Core::Types::String
 	for (std::list<Saphire::Core::Files::CZipFile *>::iterator it=files.begin(); it != files.end(); ++it)
 	{
 
-			if((*it)->getFileName()==path) { (*it)->grab(); return (*it); }
+			if((*it)->getName()==path) { (*it)->grab(); return (*it); }
 	}
 
 	return NULL;

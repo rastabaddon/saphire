@@ -19,12 +19,17 @@ public:
 	CSaphirePlatform(Saphire::Module::ICoreModule * core);
 	virtual ~CSaphirePlatform();
 
-	Saphire::Core::Types::String getName();
+	const Saphire::Core::Types::String getDebugName();
+	const Saphire::Core::Types::String getModuleName();
+
 	Saphire::Core::ILibrary * openLibrary(Saphire::Core::Types::String name);
+	const Saphire::Core::Types::String  getPlatformDirectory();
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
 	Saphire::Core::CSignal * signal;
+
+	Saphire::Core::Types::String  platformDirectory;
 };
 
 

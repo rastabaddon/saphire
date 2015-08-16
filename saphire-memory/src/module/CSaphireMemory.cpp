@@ -20,7 +20,11 @@ CSaphireMemory::~CSaphireMemory() {
 	// TODO Auto-generated destructor stub
 }
 
-Saphire::Core::Types::String CSaphireMemory::getName() {
+const Saphire::Core::Types::String CSaphireMemory::getModuleName() {
+	return "saphire-memory";
+}
+
+const Saphire::Core::Types::String CSaphireMemory::getDebugName() {
 	return "saphire-memory";
 }
 
@@ -29,15 +33,15 @@ Saphire::Core::Types::IMemoryBuffer * CSaphireMemory::createMemoryBuffer(Saphire
 	return new CMemoryBuffer(this,size);
 }
 
-void* CSaphireMemory::allocate (size_t size)
+Saphire::Core::Types::pointer CSaphireMemory::allocate (size_t size)
 {
-	void * pointer = malloc(size);;
+	Saphire::Core::Types::pointer pointer = (Saphire::Core::Types::pointer)malloc(size);;
 	memset(pointer,0,size);
 	return pointer;
 }
 
-void CSaphireMemory::deallocate (void * pointerToDelete){
-	free(pointerToDelete);
+void CSaphireMemory::deallocate (Saphire::Core::Types::pointer pointerToDelete){
+	free((void *)pointerToDelete);
 }
 
 

@@ -27,7 +27,7 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
     bool debug=false;
 
 	for (int i = 0; i < argc; ++i) {
-		printf("Starting: %s\n\r",argv[i]);
+		//printf("Starting: %s\n\r",argv[i]);
 		if(strcmp(argv[i],"debug")==0) {
 			debug = true;
 		}
@@ -51,7 +51,7 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 	baseDir += bits;
 	baseDir += "/";
 
-	printf("Get in to dir: %s\n\r",baseDir.c_str());
+	//printf("Get in to dir: %s\n\r",baseDir.c_str());
 
 	chdir(baseDir.c_str());
     baseDir = getcwd (NULL,0);
@@ -75,17 +75,34 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 	program += bits;
 	program += ext;
 
+
+
 	#ifndef _WIN32
 		setenv("LD_LIBRARY_PATH", baseDir.c_str(),0);
 	#endif
 
-	printf("Base dir: %s\n\r",baseDir.c_str());
-	printf("Starting: %s\n\r",program.c_str());
+	//printf("Base dir: %s\n\r",baseDir.c_str());
+	//printf("Starting: %s\n\r",program.c_str());
+
+	int ret = 0;
+	struct stat info;
+
+	if( stat( program.c_str(), &info ) != 0 || ( info.st_mode & S_IFDIR )) {
+			ret = -1;
+		  printf("Saphire Engine Exit With Error: Can`t found %s \n\r", program.c_str());
+		  return ret;
+	}
 
 
-	int ret = system(program.c_str());
 
-	//printf("Return: %i\n\r",ret);
+
+
+
+	ret = system(program.c_str());
+	if(ret!=0)
+	{
+		printf("Saphire Engine Exit With Error ID: %i\n\r",ret);
+	}
 
 	return ret;
 }

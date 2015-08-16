@@ -31,7 +31,7 @@ public:
 
 	void * getPointer(Saphire::Core::Types::size pos=0);
 	const Saphire::Core::Types::String  getName();
-	const Saphire::Core::Types::String  getFileName();
+	const Saphire::Core::Types::String  getDebugName();
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
@@ -40,6 +40,7 @@ private:
 	Saphire::Core::Types::IMemoryBuffer * buffer;
 	Saphire::Core::Types::size size;
 	Saphire::Core::Types::String path;
+	Saphire::Core::Types::String name;
 };
 
 } /* namespace Files */

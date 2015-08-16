@@ -17,13 +17,15 @@ public:
 	CSaphireMemory(Saphire::Module::ICoreModule* core);
 	virtual ~CSaphireMemory();
 
-	Saphire::Core::Types::String getName();
+
+	const Saphire::Core::Types::String getModuleName();
+	const Saphire::Core::Types::String getDebugName();
 
 	Saphire::Core::Types::IMemoryBuffer * createMemoryBuffer(Saphire::Core::Types::size size);
 
 	//Native raw allocator
-	void* allocate (size_t size);
-	void deallocate (void* pointerToDelete);
+	Saphire::Core::Types::pointer allocate (size_t size);
+	void deallocate (Saphire::Core::Types::pointer pointerToDelete);
 
 private:
 		Saphire::Module::ICoreModule* 	SPTR_core;

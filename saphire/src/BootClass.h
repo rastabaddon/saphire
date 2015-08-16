@@ -9,10 +9,13 @@
 #define START_H_
 
 #include <stdlib.h>
+#include <cstring>
 #include <string>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <unistd.h>
-#include <cstring>
+
 
 #ifdef _WIN32
 	#include <windows.h>
