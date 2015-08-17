@@ -54,7 +54,7 @@ namespace Manager {
 		{
 			try {
 				if(getModule(name)) {
-					SPTR_core->Debug(getDebugName(),"Skip loading `%s`",name.c_str());
+					//SPTR_core->Debug(getDebugName(),"Skip loading `%s`",name.c_str());
 					return getModule(name);
 				}
 				return this->load_native(name);

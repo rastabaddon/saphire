@@ -1,0 +1,10 @@
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/BulletCollision/CMakeFiles/BulletCollision.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3Serialize/Bullet2FileLoader/CMakeFiles/Bullet2FileLoader.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/LinearMath/CMakeFiles/LinearMath.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3Geometry/CMakeFiles/Bullet3Geometry.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3Dynamics/CMakeFiles/Bullet3Dynamics.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3Common/CMakeFiles/Bullet3Common.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3OpenCL/CMakeFiles/Bullet3OpenCL_clew.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/BulletDynamics/CMakeFiles/BulletDynamics.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/Bullet3Collision/CMakeFiles/Bullet3Collision.dir
+/home/rast/workspace/saphire-physics/src/thirdparts/bullet/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir

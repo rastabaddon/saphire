@@ -55,7 +55,11 @@ namespace Module {
 
 		 Saphire::Core::ILibrary * CSaphirePlatform::openLibrary(Saphire::Core::Types::String name)
 		 {
-			 	 return NULL;
+			 	 const char * error = NULL;
+			 	 void * lib = dlopen(name.c_str(), RTLD_LAZY);
+				 if (!lib) { SPTR_core->Debug(getDebugName(),"Error can`t open library %s (try  open %s )",name.c_str());
+				  if ((error = dlerror())) { SPTR_core->Debug(getDebugName(),"Error %s ",error); }; return NULL; }
+				 return (Saphire::Core::ILibrary *)lib;
 		 }
 
 

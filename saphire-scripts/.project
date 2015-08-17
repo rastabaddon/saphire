@@ -3,6 +3,7 @@
 	<name>saphire-platform</name>
 	<comment></comment>
 	<projects>
+		<project>LuaJIT</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
