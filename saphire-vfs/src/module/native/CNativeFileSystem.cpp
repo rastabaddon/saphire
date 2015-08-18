@@ -22,13 +22,29 @@ namespace Files {
 		FreeO(SPTR_core->getVFS());
 	}
 
+	const Saphire::Core::Types::String CNativeFileSystem::convertPathTo(Saphire::Core::Types::String path)
+	{
+			#ifdef WIN32
+
+			#endif
+			return path;
+	}
+
+	const Saphire::Core::Types::String CNativeFileSystem::convertPathFrom(Saphire::Core::Types::String path)
+	{
+			#ifdef WIN32
+			#endif
+			return path;
+	}
+
 	bool  CNativeFileSystem::setNativeBaseDir(Saphire::Core::Types::String path)
 	{
-		if(chdir(path.c_str())!=0)
+
+		if(chdir(convertPathTo(path).c_str())!=0)
 		{
 			SPTR_core->Debug(getName(),"Error set current dir %s ",path.c_str());
 		}
-		currentPath = getcwd (NULL,0);
+		currentPath = convertPathFrom(getcwd (NULL,0));
 
 		SPTR_core->Debug(getName(),"Current dir is %s ",currentPath.c_str());
 
@@ -52,7 +68,7 @@ namespace Files {
 	  	  Saphire::Core::Types::String path = currentPath + name;
 
 
-		  if( stat( path.c_str(), &info ) != 0 ) {
+		  if( stat( convertPathTo(path).c_str(), &info ) != 0 ) {
 		      return false;
 		  } else if( info.st_mode & S_IFDIR ) { // S_ISDIR() doesn't exist on my windows
 			  return false;
@@ -69,7 +85,7 @@ namespace Files {
 
 
 
-			  if( stat( path.c_str(), &info ) != 0 )
+			  if( stat( convertPathTo(path).c_str(), &info ) != 0 )
 			  {
 
 			      return false;
@@ -111,7 +127,7 @@ namespace Files {
 		struct dirent *ent;
 
 
-		if ((dir = opendir (_path.c_str())) != NULL) {
+		if ((dir = opendir (convertPathTo(_path).c_str())) != NULL) {
 		  /* print all the files and directories within directory */
 		  while ((ent = readdir (dir)) != NULL) {
 

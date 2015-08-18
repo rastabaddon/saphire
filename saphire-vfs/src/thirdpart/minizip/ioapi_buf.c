@@ -23,8 +23,8 @@
 
 #if defined(_WIN32)
 #  include <conio.h>
-#  define PRINTF  _cprintf
-#  define VPRINTF _vcprintf
+#  define PRINTF  printf
+#  define VPRINTF printf
 #else
 #  define PRINTF  printf
 #  define VPRINTF vprintf

@@ -36,6 +36,9 @@ namespace Files {
 
 		 Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> scanDir(Saphire::Core::Types::String path);
 
+		 const Saphire::Core::Types::String convertPathTo(Saphire::Core::Types::String path);
+		 const Saphire::Core::Types::String convertPathFrom(Saphire::Core::Types::String path);
+
 	private:
 		Saphire::Module::ICoreModule * SPTR_core;
 		Saphire::Core::Types::String currentPath;
