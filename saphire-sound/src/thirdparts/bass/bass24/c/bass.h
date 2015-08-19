@@ -9,7 +9,9 @@
 #define BASS_H
 
 #ifdef _WIN32
+#include <windows.h>
 #include <wtypes.h>
+#define NOBASSOVERLOADS
 typedef unsigned __int64 QWORD;
 #else
 #include <stdint.h>

@@ -22,16 +22,16 @@ namespace Module {
 			platformDirectory = "/";
 
 			#ifdef _WIN32
-			platformDirectory += "\\bin\\windows";
+			platformDirectory += "bin/windows";
 			#else
 			platformDirectory += "bin/linux";
 			#endif
 
-			#ifndef _WIN32
+			//#ifndef _WIN32
 					platformDirectory += "/";
-			#else
-					platformDirectory += "\\";
-			#endif
+			//#else
+				//	platformDirectory += "\\";
+			//#endif
 
 			#ifdef ENVIRONMENT32
 				platformDirectory += "32";
@@ -40,11 +40,11 @@ namespace Module {
 			#endif
 
 
-		 #ifndef _WIN32
+		// #ifndef _WIN32
 				platformDirectory += "/";
-		 #else
-				platformDirectory += "\\";
-		 #endif
+		// #else
+		//		platformDirectory += "\\";
+		// #endif
 
 
 		}

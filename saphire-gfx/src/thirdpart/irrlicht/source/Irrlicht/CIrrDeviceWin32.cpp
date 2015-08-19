@@ -17,6 +17,8 @@
 #include "dimension2d.h"
 #include "IGUISpriteBank.h"
 #include <winuser.h>
+
+
 #if defined(_IRR_COMPILE_WITH_JOYSTICK_EVENTS_)
 #ifdef _IRR_COMPILE_WITH_DIRECTINPUT_JOYSTICK_
 #define DIRECTINPUT_VERSION 0x0800
@@ -330,26 +332,27 @@ void pollJoysticks()
 			case 6:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_V] =
 					(s16)((65535 * (info.dwVpos - caps.wVmin)) / (caps.wVmax - caps.wVmin) - 32768);
-
+				break;
 			case 5:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_U] =
 					(s16)((65535 * (info.dwUpos - caps.wUmin)) / (caps.wUmax - caps.wUmin) - 32768);
-
+				break;
 			case 4:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_R] =
 					(s16)((65535 * (info.dwRpos - caps.wRmin)) / (caps.wRmax - caps.wRmin) - 32768);
-
+				break;
 			case 3:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_Z] =
 					(s16)((65535 * (info.dwZpos - caps.wZmin)) / (caps.wZmax - caps.wZmin) - 32768);
-
+				break;
 			case 2:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_Y] =
 					(s16)((65535 * (info.dwYpos - caps.wYmin)) / (caps.wYmax - caps.wYmin) - 32768);
-
+				break;
 			case 1:
 				event.JoystickEvent.Axis[SEvent::SJoystickEvent::AXIS_X] =
 					(s16)((65535 * (info.dwXpos - caps.wXmin)) / (caps.wXmax - caps.wXmin) - 32768);
+				break;
 			}
 
 			(void)Device->postEventFromUser(event);
@@ -1611,6 +1614,7 @@ void CIrrDeviceWin32::getWindowsVersion(core::stringc& out)
 			if (_strcmpi( "SERVERNT", szProductType) == 0)
 				out.append("Advanced Server ");
 		}
+
 
 		// Display version, service pack (if any), and build number.
 

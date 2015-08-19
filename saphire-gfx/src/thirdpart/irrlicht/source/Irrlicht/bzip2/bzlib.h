@@ -134,6 +134,10 @@ BZ_EXTERN int BZ_API(BZ2_bzDecompressEnd) (
 
 /*-- High(er) level library functions --*/
 
+#if defined(_WIN32) && !defined(MINGW)
+	#undef BZ_NO_STDIO
+#endif
+
 #ifndef BZ_NO_STDIO
 #define BZ_MAX_UNUSED 5000
 

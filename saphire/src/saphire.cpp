@@ -3,7 +3,7 @@
 // Author      : Rafal <rast> Klimaszewski
 // Version     :
 // Copyright   : 2008-2012 (C) Rafal Klimaszewski
-// Description : Hello World in C++, Ansi-style
+// Description :
 //============================================================================
 
 #include "BootClass.h"

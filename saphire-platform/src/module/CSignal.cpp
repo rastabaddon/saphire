@@ -63,7 +63,8 @@ void        CSignal::setupSignalHandlers(){
 				 gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: SIGKILL");
 				 signals->SPTR_core->Debug("SIGNAL","%s","KILL AND DUMP");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 
 			void CSignal::_SIGQUIT(int _ignored){
@@ -71,7 +72,9 @@ void        CSignal::setupSignalHandlers(){
 				gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: SIGILL");
 				 signals->SPTR_core->Debug("SIGNAL","%s","tERMINATE AND DUMP");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 signals->SPTR_core->Debug("SIGNAL","%s","SHUT GO DOWN");
+				 return;
 			}
 
 			void CSignal::_SIGILL(int _ignored){
@@ -79,7 +82,8 @@ void        CSignal::setupSignalHandlers(){
 				gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: SIGILL");
 				 signals->SPTR_core->Debug("SIGNAL","%s","invalid program image, such as invalid instruction");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 #endif
 
@@ -88,7 +92,8 @@ void        CSignal::setupSignalHandlers(){
 				 gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: SIGNIT");
 				 signals->SPTR_core->Debug("SIGNAL","%s","external interrupt, usually initiated by the user");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 
 			 void CSignal::_SIGABRT(int _ignored){
@@ -96,7 +101,8 @@ void        CSignal::setupSignalHandlers(){
 				 gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: _SIGABRT");
 				 signals->SPTR_core->Debug("SIGNAL","%s","abnormal termination condition, as is e.g. initiated by std::abort()");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 
 			 void CSignal::_SIGSEGV(int _ignored)
@@ -105,7 +111,8 @@ void        CSignal::setupSignalHandlers(){
 				 gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: _SIGSEGV");
 				 signals->SPTR_core->Debug("SIGNAL","%s","invalid memory access (segmentation fault)");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 
 			 void CSignal::_SIGTERM(int _ignored)
@@ -114,7 +121,8 @@ void        CSignal::setupSignalHandlers(){
 				 gSignalStatus = _ignored;
 				 signals->SPTR_core->Debug("SIGNAL","%s","Got siignal: _SIGTERM");
 				 signals->SPTR_core->Debug("SIGNAL","%s","termination request, sent to the program");
-				 exit(1);
+				 signals->SPTR_core->shutdown();
+				 return;
 			}
 
 } /* namespace Core */

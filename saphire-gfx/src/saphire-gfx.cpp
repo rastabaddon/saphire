@@ -10,7 +10,7 @@
 
 extern "C"
 {
-		Saphire::Module::IModule * SAPHIRE_MOD_Create(Saphire::Module::ICoreModule* core)
+		SAPHIRE_EXPORT  Saphire::Module::IModule * SAPHIRE_MOD_Create(Saphire::Module::ICoreModule* core)
 		{
 			 return  new Saphire::Module::CSaphireGraphic(core);
 		}

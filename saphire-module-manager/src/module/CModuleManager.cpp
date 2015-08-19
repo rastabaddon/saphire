@@ -54,7 +54,7 @@ namespace Manager {
 		{
 			try {
 				if(getModule(name)) {
-					//SPTR_core->Debug(getDebugName(),"Skip loading `%s`",name.c_str());
+					SPTR_core->Debug(getDebugName(),"Skip loading `%s` Module Loaded ",name.c_str());
 					return getModule(name);
 				}
 				return this->load_native(name);
@@ -76,7 +76,8 @@ namespace Manager {
 			Saphire::Core::Types::String fname = name;
 			fname += ".mod";
 
-	;
+			SPTR_core->Debug(getDebugName()," loading `%s`",fname.c_str());
+
 		   void * lib_module_mng = dlopen(fname.c_str(), RTLD_LAZY);
 		   if (!lib_module_mng) {
 			   SPTR_core->Debug(getDebugName(),"Error can`t open %s (try  open %s )",name.c_str(),fname.c_str());
@@ -86,7 +87,7 @@ namespace Manager {
 
 		   Saphire::Module::SAPHIRE_MOD_Create * Create = (Saphire::Module::SAPHIRE_MOD_Create *) dlsym(lib_module_mng, "SAPHIRE_MOD_Create");
 		   if ((error = dlerror()) != NULL || Create == NULL) {
-			   SPTR_core->Debug(getDebugName(),"Error import %s as %s, can`t open  ",name.c_str(),fname.c_str());
+			   SPTR_core->Debug(getDebugName(),"Error import %s as %s, can`t open  (%s)",name.c_str(),fname.c_str(),error);
 			   return NULL;
 		   } else {
 			   module = Create(SPTR_core);

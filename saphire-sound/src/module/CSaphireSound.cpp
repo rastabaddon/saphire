@@ -41,7 +41,7 @@ namespace Module {
 				    // wait for playback to finish
 				    while( BASS_ChannelIsActive( channel ) )
 				    {
-				        sleep(100);
+				        //sleep(100);
 				    }
 
 				   BASS_SampleFree(sample);

@@ -1,76 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1496384056.1947222909">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1496384056.1947222909" moduleId="org.eclipse.cdt.core.settings" name="Linux32">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-platform"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-platform/Linux32"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="saphire-platform" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1496384056.1947222909" name="Linux32" parent="cdt.managedbuild.config.gnu.lib.debug">
-					<folderInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1496384056.1947222909." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.lib.debug.1950076297" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.lib.debug">
-							<targetPlatform id="cdt.managedbuild.target.gnu.platform.lib.debug.1062908199" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.lib.debug"/>
-							<builder buildPath="${workspace_loc:/saphire-module-manager}/Debug" id="cdt.managedbuild.target.gnu.builder.lib.debug.1862926236" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.lib.debug"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.lib.debug.593454450" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.lib.debug"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.909374536" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug">
-								<option id="gnu.cpp.compiler.lib.debug.option.optimization.level.1271538058" name="Optimization Level" superClass="gnu.cpp.compiler.lib.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.lib.debug.option.debugging.level.1518432803" name="Debug Level" superClass="gnu.cpp.compiler.lib.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.include.paths.625938489" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
-								</option>
-								<option id="gnu.cpp.compiler.option.other.pic.1090405210" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
-								<option id="gnu.cpp.compiler.option.other.other.1061999216" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -m32 -static-libgcc -static-libstdc++ -std=c++11" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.888999028" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.lib.debug.682284559" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.lib.debug">
-								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.lib.debug.option.optimization.level.1661175198" name="Optimization Level" superClass="gnu.c.compiler.lib.debug.option.optimization.level" valueType="enumerated"/>
-								<option id="gnu.c.compiler.lib.debug.option.debugging.level.1448800541" name="Debug Level" superClass="gnu.c.compiler.lib.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.include.paths.1236743288" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/include}"/>
-								</option>
-								<option id="gnu.c.compiler.option.misc.pic.1763374267" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
-								<option id="gnu.c.compiler.option.misc.other.1015649037" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -m32 -static-libgcc -static-libstdc++ -std=c++11" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.137486426" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1871380995" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base">
-								<option defaultValue="true" id="gnu.c.link.option.shared.123603471" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.477187260" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
-								<option defaultValue="true" id="gnu.cpp.link.option.shared.1069035933" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.180960614" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-m32 -static-libgcc -static-libstdc++ -std=c++11" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1204983419" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.803693654" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.assembler.lib.debug.1780253496" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.lib.debug">
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.668311210" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<sourceEntries>
-						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
 		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436" moduleId="org.eclipse.cdt.core.settings" name="Linux64">
 				<externalSettings>
@@ -89,15 +19,15 @@
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436" name="Linux64" parent="cdt.managedbuild.config.gnu.lib.debug" preannouncebuildStep="" prebuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.lib.debug.1965826921" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.lib.debug">
-							<targetPlatform id="cdt.managedbuild.target.gnu.platform.lib.debug.1432207863" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.lib.debug"/>
-							<builder buildPath="${workspace_loc:/saphire-module-manager}/Debug" id="cdt.managedbuild.target.gnu.builder.lib.debug.450157820" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="false" superClass="cdt.managedbuild.target.gnu.builder.lib.debug"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.lib.debug.1432207863" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.lib.debug"/>
+							<builder buildPath="${workspace_loc:/saphire-module-manager}/Debug" id="cdt.managedbuild.target.gnu.builder.lib.debug.450157820" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.lib.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.lib.debug.211779467" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.lib.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.1091972671" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug">
 								<option id="gnu.cpp.compiler.lib.debug.option.optimization.level.857043052" name="Optimization Level" superClass="gnu.cpp.compiler.lib.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
@@ -168,13 +98,13 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902" moduleId="org.eclipse.cdt.core.settings" name="Windows32">
+		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987" moduleId="org.eclipse.cdt.core.settings" name="Linux32">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-platform"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-platform/Windows32"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="saphire-platform" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-gfx"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-gfx/Linux32"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="saphire-gfx" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -183,92 +113,95 @@
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902" name="Windows32" parent="cdt.managedbuild.config.gnu.exe.debug">
-					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.910476360" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.1589905023" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="mingw32-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.6611603" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1998572350" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/saphire-core}/windows64" id="cdt.managedbuild.builder.gnu.cross.412250542" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross">
-								<outputEntries>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Linux32"/>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Linux64"/>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Windows32"/>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Windows64"/>
-								</outputEntries>
-							</builder>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.208138492" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
-								<option id="gnu.c.compiler.option.include.paths.529538203" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/includes/include}&quot;"/>
+				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987" name="Linux32" parent="cdt.managedbuild.config.gnu.lib.debug" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.lib.debug.1804213159" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.lib.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.lib.debug.1405335754" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.lib.debug"/>
+							<builder buildPath="${workspace_loc:/saphire-module-manager}/Debug" id="cdt.managedbuild.target.gnu.builder.lib.debug.1844417800" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="false" superClass="cdt.managedbuild.target.gnu.builder.lib.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.lib.debug.1230808566" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.lib.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.1179524428" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug">
+								<option id="gnu.cpp.compiler.lib.debug.option.optimization.level.1423995590" name="Optimization Level" superClass="gnu.cpp.compiler.lib.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.lib.debug.option.debugging.level.766728032" name="Debug Level" superClass="gnu.cpp.compiler.lib.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1444370557" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="/usr/X11R6/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
 								</option>
-								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.809070210" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.debugging.level.1285375713" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.misc.other.521143068" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++ -std=c++11 " valueType="string"/>
-								<option id="gnu.c.compiler.option.misc.pic.2124202087" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.200083184" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.257395571" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
-								<option id="gnu.cpp.compiler.option.include.paths.714474052" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/includes/include}&quot;"/>
+								<option id="gnu.cpp.compiler.option.other.pic.68912318" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.other.other.424434714" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++ -std=c++11 -m32" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.579543403" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.977986536" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="DIRRLICHT_EXPORTS=1"/>
+									<listOptionValue builtIn="false" value="NEED_SIGNAL_CATCHER"/>
+									<listOptionValue builtIn="false" value="SYSTEM=Linux"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.optimization.level.998898604" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.1370710588" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.1420539507" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0  -static-libgcc -static-libstdc++ -std=c++11 " valueType="string"/>
-								<option id="gnu.cpp.compiler.option.other.pic.1606849265" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1588211008" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.undef.1863685659" name="Undefined symbols (-U)" superClass="gnu.cpp.compiler.option.preprocessor.undef" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="USE_SETMODE"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1063742404" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.530159670" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
-								<option defaultValue="true" id="gnu.c.link.option.shared.1272591327" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.lib.debug.187419395" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.lib.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.lib.debug.option.optimization.level.1974492433" name="Optimization Level" superClass="gnu.c.compiler.lib.debug.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.lib.debug.option.debugging.level.1956281273" name="Debug Level" superClass="gnu.c.compiler.lib.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1677653588" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.misc.pic.987416634" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.misc.other.1484324877" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++ -std=c++11 -m32" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.717505118" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="DIRRLICHT_EXPORTS=1"/>
+									<listOptionValue builtIn="false" value="SYSTEM=Linux"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.286532068" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="USE_SETMODE"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1486983401" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1567281375" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
-								<option id="gnu.cpp.link.option.libs.1816341047" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
-								<option id="gnu.cpp.link.option.paths.1964689598" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
-								<option id="gnu.cpp.link.option.flags.866576921" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-static-libgcc -static-libstdc++ -std=c++11 " valueType="string"/>
-								<option defaultValue="true" id="gnu.cpp.link.option.shared.173297281" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.86492009" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.446245994" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base">
+								<option defaultValue="true" id="gnu.c.link.option.shared.536449906" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.725649725" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<option defaultValue="true" id="gnu.cpp.link.option.shared.74779441" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.flags.779614131" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-static-libgcc -static-libstdc++ -std=c++11 -lGL -lXxf86vm -m32" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.199878508" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
-								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.1528478859" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
+								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.1780126740" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1155341992" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.2014669850" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.include.paths.312410001" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/thirdParts/dlfcn-win32/win64"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/saphire-platform/includes/include}&quot;"/>
-									<listOptionValue builtIn="false" value="/mnt/oldos/home/rast/workspace/saphire-platform/saphire-core/include"/>
-									<listOptionValue builtIn="false" value="/mnt/oldos/home/rast/workspace/saphire-platform/saphire-core/saphire-core/include"/>
-									<listOptionValue builtIn="false" value="/mnt/oldos/home/rast/workspace/saphire-platform/saphire-core/saphire-module-manager/include"/>
-									<listOptionValue builtIn="false" value="/mnt/oldos/home/rast/workspace/saphire-core/Debug/|&quot;/mnt/oldos/home/rast/workspace/saphire-core/include"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1127229053" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.lib.debug.1598290561" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.lib.debug">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1620073159" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" name="transupp.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" name="ansi2knr.1" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" name="cderror.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" name="cdjpeg.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" name="aclocal.m4" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="backup|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1|thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdswitch.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdcolmap.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/example.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/djpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/ckconfig.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cjpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemnobs.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemname.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemmac.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdosa.asm|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdos.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.c|thirdpart/irrlicht/bin|thirdpart/irrlicht/doc|thirdpart/irrlicht/examples|thirdpart/irrlicht/source/Irrlicht/zlib|thirdpart/irrlicht/source/Irrlicht/MacOSX|thirdpart/irrlicht/source/Irrlicht/lzma|thirdpart/irrlicht/source/Irrlicht/aesGladman|thirdpart/irrlicht/source/Irrlicht/bzip2|thirdpart/irrlicht/source/Irrlicht/libpng|thirdpart/irrlicht/tools" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.823253176.49347742">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.823253176.49347742" moduleId="org.eclipse.cdt.core.settings" name="Windows64">
+		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530" moduleId="org.eclipse.cdt.core.settings" name="Windows32">
 				<externalSettings>
 					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-platform"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-platform/Windows64"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="saphire-platform" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-gfx"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-gfx/Windows32"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="saphire-gfx" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -276,62 +209,188 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.823253176.49347742" name="Windows64" parent="cdt.managedbuild.config.gnu.exe.debug">
-					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.823253176.49347742." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.2086526414" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.386695655" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="x86_64-w64-mingw32-" valueType="string"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.195053361" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.534194948" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/saphire-core}/windows64" id="cdt.managedbuild.builder.gnu.cross.1730804548" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.302075863" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
-								<option id="gnu.c.compiler.option.include.paths.1561183111" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/includes/include}&quot;"/>
+				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530" name="Windows32" parent="cdt.managedbuild.config.gnu.lib.debug" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.1013583881" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.157097138" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="i686-mingw32-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.703279009" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1754425238" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/saphire-gfx}/Windows32" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.2075272914" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1507171505" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option id="gnu.c.compiler.option.include.paths.1910871964" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/i686-mingw32/mingw/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/libpng}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/zlib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/bzip2}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
 								</option>
-								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1760147622" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.debugging.level.269893606" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.misc.other.183558183" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1307429581" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.464233913" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
-								<option id="gnu.cpp.compiler.option.include.paths.617442112" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/includes/include}&quot;"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.176250596" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="IRRLICHT_EXPORTS=1"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.optimization.level.1649459672" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.1223452465" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.13139010" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.369878160" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1475296612" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
-								<option defaultValue="true" id="gnu.c.link.option.shared.28096312" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.908666272" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
-								<option id="gnu.cpp.link.option.libs.866533686" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
-								<option id="gnu.cpp.link.option.paths.1714494578" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/thirdParts/dlfcn-win32/win64"/>
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1637448322" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1471435124" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.pic.95252660" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.235541753" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="__STRICT_ANSI__"/>
 								</option>
-								<option defaultValue="true" id="gnu.cpp.link.option.shared.2010081161" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.793624562" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-static-libgcc -static-libstdc++" valueType="string"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1257595310" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+								<option id="gnu.c.compiler.option.misc.other.157071400" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.932863145" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1674248418" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.include.paths.2118449118" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/i686-mingw32/mingw/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/libpng}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/zlib}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/bzip2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1925310277" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1684191081" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.166872676" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="IRRLICHT_EXPORTS=1"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.other.other.1003833105" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++11 -static-libgcc -static-libstdc++" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.pic.718764807" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.undef.124556666" name="Undefined symbols (-U)" superClass="gnu.cpp.compiler.option.preprocessor.undef" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="__STRICT_ANSI__"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.123887796" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1579789976" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<option defaultValue="true" id="gnu.c.link.option.shared.1531508117" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.2118748672" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="gnu.cpp.link.option.libs.1283014576" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+								</option>
+								<option defaultValue="true" id="gnu.cpp.link.option.shared.1122478976" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.flags.1657014225" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-static-libgcc -static-libstdc++" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.824978587" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
-								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.1653750667" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
+								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.1578740250" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.762040107" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.915384624" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.include.paths.774603796" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../saphire-core/include"/>
-									<listOptionValue builtIn="false" value="../saphire-core/saphire-core/include"/>
-									<listOptionValue builtIn="false" value="../saphire-core/saphire-module-manager/include"/>
-									<listOptionValue builtIn="false" value="/mnt/oldos/home/rast/workspace/saphire-core/Debug/|&quot;/mnt/oldos/home/rast/workspace/saphire-core/include"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.654053626" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1430439526" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.206174935" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1581659149" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" name="transupp.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" name="ansi2knr.1" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" name="cderror.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" name="cdjpeg.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" name="aclocal.m4" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="backup|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="thirdpart/irrlicht/source/Irrlicht/libpng/projects|thirdpart/irrlicht/source/Irrlicht/libpng/contrib|thirdpart/irrlicht/source/Irrlicht/bzip2/unzcrash.c|thirdpart/irrlicht/source/Irrlicht/bzip2/spewG.c|thirdpart/irrlicht/source/Irrlicht/bzip2/mk251.c|thirdpart/irrlicht/source/Irrlicht/bzip2/bzip2.c|thirdpart/irrlicht/source/Irrlicht/bzip2/bzip2recover.c|thirdpart/irrlicht/source/Irrlicht/bzip2/dlltest.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jpegtran.c|thirdpart/irrlicht/media|thirdpart/irrlicht/lib|thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1|thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdswitch.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdcolmap.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/example.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/djpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/ckconfig.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cjpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemnobs.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemname.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemmac.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdosa.asm|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdos.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.c|thirdpart/irrlicht/bin|thirdpart/irrlicht/doc|thirdpart/irrlicht/examples|thirdpart/irrlicht/source/Irrlicht/MacOSX|thirdpart/irrlicht/tools" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515" moduleId="org.eclipse.cdt.core.settings" name="Windows64">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-gfx"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-gfx/Windows64"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="saphire-gfx" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="mod" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515" name="Windows64" parent="cdt.managedbuild.config.gnu.lib.debug" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.795256348" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.609657921" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="x86_64-w64-mingw32-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.1520367460" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1034237638" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/saphire-gfx}/Windows32" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.956540269" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.579050609" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option id="gnu.c.compiler.option.include.paths.220071497" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/x86_64-w64-mingw32/mingw/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/libpng}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/zlib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/bzip2}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1168740530" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="IRRLICHT_EXPORTS=1"/>
+								</option>
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2102152598" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.375548726" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.pic.1405094363" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.375922084" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="__STRICT_ANSI__"/>
+								</option>
+								<option id="gnu.c.compiler.option.misc.other.50261095" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -static-libgcc -static-libstdc++" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1807251659" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.476519576" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.include.paths.1132701974" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/x86_64-w64-mingw32/mingw/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/libpng}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/zlib}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/rast/Desktop/workspace/saphire-gfx/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/source/Irrlicht/bzip2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdpart/irrlicht/include}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1824622863" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.2141783481" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.2086121338" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="IRRLICHT_EXPORTS=1"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.other.other.28827154" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++11 -static-libgcc -static-libstdc++" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.pic.1196995364" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.undef.390988964" name="Undefined symbols (-U)" superClass="gnu.cpp.compiler.option.preprocessor.undef" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="__STRICT_ANSI__"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.103663051" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1176434760" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<option defaultValue="true" id="gnu.c.link.option.shared.2131800485" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1116127391" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="gnu.cpp.link.option.libs.170140130" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+								</option>
+								<option defaultValue="true" id="gnu.cpp.link.option.shared.1181426909" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.flags.1616527166" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-static-libgcc -static-libstdc++" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1707272439" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+								<outputType id="cdt.managedbuild.tool.gnu.cpp.linker.output.so.1100617949" outputPrefix="" superClass="cdt.managedbuild.tool.gnu.cpp.linker.output.so"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.583604575" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1815650602" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.469517309" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" name="transupp.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" name="ansi2knr.1" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" name="cderror.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" name="cdjpeg.h" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.452867515.src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" name="aclocal.m4" rcbsApplicability="disable" resourcePath="src/thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="backup|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="thirdpart/irrlicht/source/Irrlicht/libpng/projects|thirdpart/irrlicht/source/Irrlicht/libpng/contrib|thirdpart/irrlicht/source/Irrlicht/bzip2/unzcrash.c|thirdpart/irrlicht/source/Irrlicht/bzip2/spewG.c|thirdpart/irrlicht/source/Irrlicht/bzip2/mk251.c|thirdpart/irrlicht/source/Irrlicht/bzip2/bzip2.c|thirdpart/irrlicht/source/Irrlicht/bzip2/bzip2recover.c|thirdpart/irrlicht/source/Irrlicht/bzip2/dlltest.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jpegtran.c|thirdpart/irrlicht/media|thirdpart/irrlicht/lib|thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.1|thirdpart/irrlicht/source/Irrlicht/jpeglib/aclocal.m4|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/transupp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdtarga.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdswitch.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdrle.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdppm.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdgif.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdcolmap.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdbmp.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/example.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/djpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/ckconfig.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cjpeg.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/cderror.h|thirdpart/irrlicht/source/Irrlicht/jpeglib/ansi2knr.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemnobs.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemname.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/wrjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/rdjpgcom.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemmac.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdosa.asm|thirdpart/irrlicht/source/Irrlicht/jpeglib/jmemdos.c|thirdpart/irrlicht/source/Irrlicht/jpeglib/cdjpeg.c|thirdpart/irrlicht/bin|thirdpart/irrlicht/doc|thirdpart/irrlicht/examples|thirdpart/irrlicht/source/Irrlicht/MacOSX|thirdpart/irrlicht/tools" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -356,8 +415,12 @@
 			<resource resourceType="PROJECT" workspacePath="/saphire-platform"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.1179524428;cdt.managedbuild.tool.gnu.cpp.compiler.input.1063742404">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.83946742;cdt.managedbuild.config.gnu.cross.exe.release.83946742.;cdt.managedbuild.tool.gnu.cross.c.compiler.659280356;cdt.managedbuild.tool.gnu.c.compiler.input.566983770">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 			<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
@@ -370,9 +433,6 @@
 					<parser enabled="true"/>
 				</scannerInfoProvider>
 			</profile>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.;cdt.managedbuild.tool.gnu.c.compiler.lib.debug.588907241;cdt.managedbuild.tool.gnu.c.compiler.input.897919784">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.83946742;cdt.managedbuild.config.gnu.cross.exe.release.83946742.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.726713260;cdt.managedbuild.tool.gnu.cpp.compiler.input.397642647">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
@@ -387,15 +447,32 @@
 				</scannerInfoProvider>
 			</profile>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902;cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902.;cdt.managedbuild.tool.gnu.cross.c.compiler.208138492;cdt.managedbuild.tool.gnu.c.compiler.input.200083184">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902;cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.257395571;cdt.managedbuild.tool.gnu.cpp.compiler.input.1588211008">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.;cdt.managedbuild.tool.gnu.cross.c.compiler.1507171505;cdt.managedbuild.tool.gnu.c.compiler.input.932863145">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1674248418;cdt.managedbuild.tool.gnu.cpp.compiler.input.123887796">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.;cdt.managedbuild.tool.gnu.c.compiler.lib.debug.187419395;cdt.managedbuild.tool.gnu.c.compiler.input.1486983401">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.;cdt.managedbuild.tool.gnu.cross.c.compiler.955085109;cdt.managedbuild.tool.gnu.c.compiler.input.264798223">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.288445987.1920537530.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1640687616;cdt.managedbuild.tool.gnu.cpp.compiler.input.1183588887">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.;cdt.managedbuild.tool.gnu.c.compiler.lib.debug.588907241;cdt.managedbuild.tool.gnu.c.compiler.input.897919784">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902;cdt.managedbuild.config.gnu.exe.debug.1159663639.660220256.1834694366.1749583420.1510674902.;cdt.managedbuild.tool.gnu.cross.c.compiler.208138492;cdt.managedbuild.tool.gnu.c.compiler.input.200083184">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436;cdt.managedbuild.config.gnu.lib.debug.2078043982.1584170436.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.1091972671;cdt.managedbuild.tool.gnu.cpp.compiler.input.495035532">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

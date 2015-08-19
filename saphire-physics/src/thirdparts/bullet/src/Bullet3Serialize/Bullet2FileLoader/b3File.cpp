@@ -391,7 +391,7 @@ void bFile::swapDNA(char* ptr)
 	char* data = &ptr[20];
 //	void bDNA::init(char *data, int len, bool swap)
 	int *intPtr=0;short *shtPtr=0;
-	char *cp = 0;int dataLen =0;long nr=0;
+	char *cp = 0;int dataLen =0;uintptr_t nr=0;
 	intPtr = (int*)data;
 
 	/*
@@ -429,7 +429,7 @@ void bFile::swapDNA(char* ptr)
 
 
 	{
-		nr= (long)cp;
+		nr= (uintptr_t)cp;
 	//long mask=3;
 		nr= ((nr+3)&~3)-nr;
 		while (nr--)
@@ -466,7 +466,7 @@ void bFile::swapDNA(char* ptr)
 	}
 
 {
-		nr= (long)cp;
+		nr= (uintptr_t)cp;
 	//	long mask=3;
 		nr= ((nr+3)&~3)-nr;
 		while (nr--)

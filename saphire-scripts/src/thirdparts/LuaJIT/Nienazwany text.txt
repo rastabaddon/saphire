@@ -1,0 +1,2 @@
+make -j8 HOST_CC="gcc" TARGET_FLAGS="-static-libgcc" CROSS=x86_64-w64-mingw32- TARGET_SYS=Windows
+make -j8 HOST_CC="gcc -m32" TARGET_FLAGS="-static-libgcc" CROSS=i686-mingw32- TARGET_SYS=Windows

@@ -26,11 +26,14 @@ public:
 	CSaphireGraphic(Saphire::Module::ICoreModule *  core);
 	virtual ~CSaphireGraphic();
 
+
 	const Saphire::Core::Types::String getModuleName();
+
+	Saphire::Core::Graphics::IScreen * createScreen(Saphire::Core::Graphics::TE_SAPHIRE_DRIVER driver = Saphire::Core::Graphics::TE_SAPHIRE_DRIVER::TE_OPENGL,Saphire::Core::Types::u16 width=800,Saphire::Core::Types::u16 height=600,bool fullscreen=false );
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
-
+	IrrlichtDevice * device;
 };
 
 
