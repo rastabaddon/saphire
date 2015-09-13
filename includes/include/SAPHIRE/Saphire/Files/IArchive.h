@@ -22,6 +22,9 @@ namespace Saphire {
 
 						virtual Saphire::Core::Types::u8 get(Saphire::Core::Types::size pos){ return 0; };
 						virtual bool put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char){ return false; };
+
+						virtual bool  isFileExists(const Saphire::Core::Types::String & name) { return false; }
+						virtual bool  isDirExists(const Saphire::Core::Types::String & name) { return false; }
 				};
 
 

@@ -6,8 +6,11 @@
 				<externalSettings>
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-platform"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/saphire-scripts"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-platform/Linux32"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/saphire-scripts/Linux32"/>
 						<entry flags="RESOLVED" kind="libraryFile" name="saphire-platform" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="RESOLVED" kind="libraryFile" name="saphire-scripts" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -170,7 +173,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry excluding="thirdparts/LuaJIT|thirdparts/LuaJIT/src/IGNORE|thirdparts/LuaJIT/IGNORE|thirdparts/LuaJIT/src/host|thirdparts/LuaJIT/etc|thirdparts/LuaJIT/doc" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="thirdparts/LuaJIT|thirdparts/LuaJIT/src/IGNORE|thirdparts/LuaJIT/doc|thirdparts/LuaJIT/etc|thirdparts/LuaJIT/IGNORE|thirdparts/LuaJIT/src/host" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

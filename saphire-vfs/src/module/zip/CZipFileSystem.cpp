@@ -94,6 +94,8 @@ CZipFileSystem::CZipFileSystem(Saphire::Module::ICoreModule * core) {
 		}
 
 		Saphire::Core::Files::IFile * zipFile = SPTR_core->getVFS()->openFile(path,true);
+		if(!zipFile || zipFile->getSize()<2) return NULL;
+
 		    if(zipFile->get(0)=='P'&&zipFile->get(1)=='K') {
 				Delete(zipFile);
 		    	//SPTR_core->Debug(getName(),"Yes it is ZIP archive %s ",path.c_str());

@@ -18,7 +18,7 @@ namespace Module {
 
 
 
-			createScreen();
+			addFuntion("setWindowTitle",new Saphire::Core::Objects::ICallbackMethod<CSaphireGraphic>(this,&CSaphireGraphic::script_setWindowTitle));
 
 		}
 
@@ -36,6 +36,11 @@ namespace Module {
 			return "saphire-gfx";
 		}
 
+		Saphire::Core::Types::IAnyType CSaphireGraphic::script_setWindowTitle(Saphire::Core::Types::IAnyType param) {
+			Saphire::Core::Types::IAnyType ret;
+
+			return ret;
+		}
 
 		Saphire::Core::Graphics::IScreen * CSaphireGraphic::createScreen(Saphire::Core::Graphics::TE_SAPHIRE_DRIVER driver,Saphire::Core::Types::u16 width,Saphire::Core::Types::u16 height,bool fullscreen )
 		{

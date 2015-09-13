@@ -59,6 +59,12 @@ bool CMemoryFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _c
 	return  buffer->put(pos,_char);
 }
 
+Saphire::Core::Types::String CMemoryFile::getAsString()
+{
+	Saphire::Core::Types::String  data;
+	data.append((const char *)buffer->getPointer(),buffer->getSize());
+	return data;
+}
 
 } /* namespace Files */
 } /* namespace Core */

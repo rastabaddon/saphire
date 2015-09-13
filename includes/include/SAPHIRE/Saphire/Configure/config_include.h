@@ -14,6 +14,11 @@
 		/* autoconfig */
 		#include "xAutoConfig.h"
 
+		#ifdef WINDOWS
+				#define SAPHIRE_EXPORT __declspec(dllexport)
+		#else
+				#define SAPHIRE_EXPORT
+		#endif
 
 		#ifndef DEFAULT_INIT_SCRIPT
 			#define DEFAULT_INIT_SCRIPT "xEngine/script/init.lua"

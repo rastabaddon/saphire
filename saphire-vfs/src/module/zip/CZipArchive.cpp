@@ -28,6 +28,8 @@ CZipArchive::CZipArchive(Saphire::Core::Types::String name,Saphire::Module::ICor
 	SZIP_FILE_DATA * dataHeader;
 
 	Saphire::Core::Types::String text;
+	Saphire::Core::Types::String fname;
+
 	 char * text_p;
 	 void  * data_p;
 	 void * extra_p;
@@ -57,11 +59,12 @@ CZipArchive::CZipArchive(Saphire::Core::Types::String name,Saphire::Module::ICor
 		 extra_p = (char *)zipFile->getPointer(i+30+fileHeader->fileNameSize);
 		 dataHeader = (SZIP_FILE_DATA *)zipFile->getPointer(i+30+fileHeader->fileNameSize+fileHeader->ExtraFieldName);
 
-		 text.append("/");
-		 text.append(text_p,fileHeader->fileNameSize);
+		 fname = "";
+		 fname.append(text_p,fileHeader->fileNameSize);
+		 fname = fname.substr(fname.find_first_of("/")+1);
 
-
-
+		 text = "/";
+		 text.append(fname);
 
 
 		 vzipFile = new Saphire::Core::Files::CZipFile(SPTR_core,text,false,this,fileHeader->compressionMethod,zipFile->getPointer(i+30+fileHeader->fileNameSize+fileHeader->ExtraFieldName),fileHeader->compressedSize,fileHeader->uncompressedSize);
@@ -80,8 +83,8 @@ CZipArchive::CZipArchive(Saphire::Core::Types::String name,Saphire::Module::ICor
 
 
 	 text_p = NULL;
-	 SPTR_core->Debug(getName(),"FREE MEMORY HERE");
-	 SPTR_core->Debug(getName(),"HERE %i",zipFile->getRefCount());
+	// SPTR_core->Debug(getName(),"FREE MEMORY HERE");
+	// SPTR_core->Debug(getName(),"HERE %i",zipFile->getRefCount());
 	 Free(zipFile);
 
 }
@@ -112,19 +115,20 @@ Saphire::Core::Types::size CZipArchive::getSize()
 
 bool  CZipArchive::isFileExists(const Saphire::Core::Types::String & name)
 {
-	//SPTR_core->Debug(getName(),"Test1 file %s ",name.c_str());
+	SPTR_core->Debug(getName(),"isFileExists  %s ",name.c_str());
 	 for (std::list<Saphire::Core::Files::CZipFile *>::iterator it=files.begin(); it != files.end(); ++it)
 	{
-		    //SPTR_core->Debug(getName(),"TEST: file [%s] = [%s]",(*it)->getName().c_str(),name.c_str());
-			if((*it)->getName()==name) return true;
+
+			if((*it)->getName()==name)  { return true; }
 	}
 
+	 SPTR_core->Error(getName(),"Not Found in zip file [%s] ",name.c_str());
 	return false;
 }
 
 bool  CZipArchive::isDirExists(const Saphire::Core::Types::String & name)
 		{
-	SPTR_core->Debug(getName(),"Test2 file %s ",name.c_str());
+	SPTR_core->Debug(getName(),"isDirExists  %s NOT FINISH YET ",name.c_str());
 	return false;
 		}
 

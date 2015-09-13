@@ -8,41 +8,20 @@
 #ifndef XTYPES_H_
 #define XTYPES_H_
 
-namespace Saphire {
-namespace Core
-{
-	namespace Types
-	{
 
-					typedef  float f32;
-					typedef  double f64;
-					typedef  long double f80;
-
-					typedef int  c32;//GLsizei
-
-
-					typedef  unsigned char u8;
-					typedef  unsigned short u16;
-					typedef  unsigned int u32;						//GLuint
-					typedef  unsigned long long u64;
-					typedef  std::size_t size;
-					typedef  signed char s8;
-					typedef  signed short s16;
-					typedef  signed int s32;
-					typedef  long long s64;
-
-					typedef void * pointer;
-					typedef  char c8;
-
-
-
-	}
-}
-}
+	#include "String.h"
 	#include "IBaseObject.h"
 	#include "IMemoryBuffer.h"
 	#include "List.h"
-	#include "String.h"
+
 	#include "IFilePath.h"
+
+    //At the end
+
+
+	#include "IAny.h"
+
+	#include "ICallbackFunction.h"
+	#include "ICallbackMethod.h"
 
 #endif /* XTYPES_H_ */

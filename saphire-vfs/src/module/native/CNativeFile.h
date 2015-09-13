@@ -32,6 +32,7 @@ public:
 	void * getPointer(Saphire::Core::Types::size pos=0);
 	const Saphire::Core::Types::String  getName();
 	const Saphire::Core::Types::String  getDebugName();
+	Saphire::Core::Types::String getAsString();
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;

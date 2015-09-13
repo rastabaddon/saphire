@@ -10,17 +10,22 @@
 #ifndef IMODULE_H_
 #define IMODULE_H_
 
+
+
+
 namespace Saphire {
 
 	//! Core thing`s namespace
 	namespace Module {
 
-		class IModule : public Saphire::IBaseObject
+		class IModule : public Saphire::Core::Objects::IObject
 		{
 			public:
 				IModule(){};
 				virtual ~IModule(){};
-				virtual Saphire::Core::Types::String getName()=0;
+
+				virtual const Saphire::Core::Types::String getModuleName(){ return "IModule"; };
+				virtual const Saphire::Core::Types::String getDebugName(){ return "IModule"; };
 				virtual const Saphire::Core::Types::String getModuleDescription(){ return "No description"; };
 				virtual bool init() { return false; };
 				virtual bool loop() { return false; };

@@ -22,6 +22,10 @@ public:
 	const Saphire::Core::Types::String getDebugName();
 	Saphire::Module::IModule * load (Saphire::Core::Types::String name);
 	Saphire::Module::IModule * getModule (Saphire::Core::Types::String name);
+	Saphire::Core::Types::List<Saphire::Module::IModule *> getAllModules();
+
+	bool init();
+
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
 	Saphire::Core::Types::List<Saphire::Module::IModule *> modules;

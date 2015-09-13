@@ -16,7 +16,7 @@ namespace Files {
 
 class CNativeArchive : public Saphire::Core::Files::IArchive {
 public:
-	CNativeArchive(Saphire::Core::Types::String name,Saphire::Module::ICoreModule * core);
+	CNativeArchive(Saphire::Core::Types::String path,Saphire::Module::ICoreModule * core);
 	virtual ~CNativeArchive();
 
 	const Saphire::Core::Types::String getName();
@@ -26,6 +26,8 @@ public:
 	Saphire::Core::Types::size getSize();
 
 	void * getPointer(Saphire::Core::Types::size pos=0);
+	 bool  isFileExists(const Saphire::Core::Types::String & name);
+	 bool  isDirExists(const Saphire::Core::Types::String & name);
 
 private:
 	Saphire::Core::Types::String name;

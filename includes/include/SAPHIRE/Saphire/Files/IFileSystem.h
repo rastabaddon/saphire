@@ -17,7 +17,9 @@ namespace Saphire {
 				class IFileSystem : public Saphire::IBaseObject
 				{
 					public:
+						virtual const Saphire::Core::Types::String getDebugName()=0;
 						virtual const Saphire::Core::Types::String getName()=0;
+
 						virtual bool  isFileExists(const Saphire::Core::Types::String & name)=0;
 						virtual bool  isDirExists(const Saphire::Core::Types::String & name)=0;
 
@@ -25,6 +27,7 @@ namespace Saphire {
 						virtual const Saphire::Core::Types::String getFileSystemDescription(){ return "No description"; };
 						//file
 						virtual Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable)=0;
+						virtual Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> scanDir(Saphire::Core::Types::String path)=0;
 				};
 
 

@@ -19,5 +19,6 @@
 	#include "dlfcn/dlfcn.h"
 	#include "vapass/vapass.h"
 
+	#define _P_ \\
 
 #endif /* WINDOWS_INC_H_ */

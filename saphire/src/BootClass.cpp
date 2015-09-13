@@ -84,13 +84,13 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 	//printf("Base dir: %s\n\r",baseDir.c_str());
 	//printf("Starting: %s\n\r",program.c_str());
 
-	int ret = 0;
+	int status = 0;
 	struct stat info;
 
 	if( stat( program.c_str(), &info ) != 0 || ( info.st_mode & S_IFDIR )) {
-			ret = -1;
+		status = -1;
 		  printf("Saphire Engine Exit With Error: Can`t found %s \n\r", program.c_str());
-		  return ret;
+		  return status;
 	}
 
 
@@ -98,15 +98,23 @@ int BootClass::execute(std::string baseDir,std::string programName,std::string i
 
 
 
-	ret = system(program.c_str());
-	if(ret!=0)
+	status = system(program.c_str());
+
+	if (status < 0)
+
+		printf("Saphire Engine Exit With Error ID: %i %s \n\r",status,strerror(errno));
+
+	else
 	{
-		printf("Saphire Engine Exit With Error ID: %i\n\r",ret);
+	    if (WIFEXITED(status))
+	    	if(status!=0) printf("Saphire Engine Exit With Error ID: %i %s \n\r",status,WEXITSTATUS(status));
+
+	    else
+	    	if(status!=0) printf("Saphire Engine Exit With Unknown Error ID: %i \n\r",status);
+
 	}
 
-
-
-	return ret;
+	return status;
 }
 
 	}

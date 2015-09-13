@@ -13,9 +13,13 @@
 
 
 	#include "APlatformDepended/aplatformdepended_inc.h"
-	#include "Types/Types.h"
 
-	#include "IModule.h"
+	#include "Types/SimpleTypes.h"
+	#include "Threads/threads_inc.h"
+	#include "Types/Types.h"
+	#include "Threads/ICpuThread.h"
+
+	//#include "IModule.h"
 	#include "ILibrary.h"
 
 #endif /* CORE_INC_H_ */

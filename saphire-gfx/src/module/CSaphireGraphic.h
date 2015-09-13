@@ -26,10 +26,13 @@ public:
 	CSaphireGraphic(Saphire::Module::ICoreModule *  core);
 	virtual ~CSaphireGraphic();
 
+	virtual Saphire::Core::Types::String getObjectType() { return "_Graphic"; };
 
 	const Saphire::Core::Types::String getModuleName();
 
 	Saphire::Core::Graphics::IScreen * createScreen(Saphire::Core::Graphics::TE_SAPHIRE_DRIVER driver = Saphire::Core::Graphics::TE_SAPHIRE_DRIVER::TE_OPENGL,Saphire::Core::Types::u16 width=800,Saphire::Core::Types::u16 height=600,bool fullscreen=false );
+
+	Saphire::Core::Types::IAnyType script_setWindowTitle(Saphire::Core::Types::IAnyType param);
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;

@@ -25,6 +25,8 @@ namespace Module {
 			NFS = new Saphire::Core::Files::CNativeFileSystem(SPTR_core);
 			((Saphire::Core::Files::CNativeFileSystem *)NFS)->setNativeBaseDir(path);
 			addArchive("/");
+			addArchive("/xEngine");
+
 
 			MEMORYFS = new Saphire::Core::Files::CMemoryFileSystem(SPTR_core);
 			addArchive("/");
@@ -50,10 +52,13 @@ namespace Module {
 			{
 					 for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 					{
+
+
 						if((*it)->isFileExists(path)) return true;
 					}
 
-					  return false;
+					return false;
+
 			}
 
 			 bool  CSaphireVFS::isDirExists(const Saphire::Core::Types::String & path)
@@ -84,11 +89,16 @@ namespace Module {
 
 		Saphire::Core::Files::IFile * CSaphireVFS::openFile(Saphire::Core::Types::String path,bool writable)
 		{
-			//SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
+			if(!isFileExists(path)) {
+				SPTR_core->Debug(getDebugName(),"Can`t open file %s , file not exists",path.c_str());
+				return NULL;
+			}
+
 			Saphire::Core::Files::IFile * file = NULL;
 
 			for (std::list<Saphire::Core::Files::IFileSystem *>::iterator it=fileSystems.begin(); it != fileSystems.end(); ++it)
 			{
+
 				file = (*it)->openFile(path,writable);
 				if(file) { break; }
 			}

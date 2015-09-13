@@ -49,13 +49,10 @@ CNativeFile::CNativeFile(Saphire::Module::ICoreModule * core,Saphire::Core::Type
 		Free(buffer);
 
 		this->writable = false;
-		SPTR_core->Debug("NativeFIle","Cant open file ",path.c_str());
+		SPTR_core->Debug("NativeFIle","Cant open file `%s` ",path.c_str());
 	}
 
-	for(Saphire::Core::Types::size i=0; i<size; i++)
-	{
-		//SPTR_core->Debug("NativeFIle","%i [%i] ",i,buffer->get(i));
-	}
+
 }
 
 CNativeFile::~CNativeFile() {
@@ -66,13 +63,13 @@ CNativeFile::~CNativeFile() {
 
 }
 
-Saphire::Core::Types::size CNativeFile::getSize() { return buffer->getSize(); }
+Saphire::Core::Types::size CNativeFile::getSize() { if(!buffer) return 0; return buffer->getSize(); }
 
 /**
  * Reads a byte
  */
 Saphire::Core::Types::u8 CNativeFile::get(Saphire::Core::Types::size pos){
-
+	 if(!buffer) return 0;
 	return  buffer->get(pos);
 }
 
@@ -80,6 +77,7 @@ Saphire::Core::Types::u8 CNativeFile::get(Saphire::Core::Types::size pos){
  * Write a byte
  */
 bool CNativeFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char){
+	if(!buffer) return false;
 	return  buffer->put(pos,_char);
 }
 
@@ -93,7 +91,15 @@ bool CNativeFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _c
 
 void * CNativeFile::getPointer(Saphire::Core::Types::size pos)
 {
+	if(!buffer) return NULL;
 	return  buffer->getPointer(pos);
+}
+
+Saphire::Core::Types::String CNativeFile::getAsString()
+{
+	Saphire::Core::Types::String  data = "";
+	if(buffer) data.append((const char *)buffer->getPointer(),buffer->getSize());
+	return data;
 }
 
 } /* namespace Files */

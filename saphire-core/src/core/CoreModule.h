@@ -25,25 +25,35 @@ public:
 	const Saphire::Core::Types::String getDebugName();
 	int run(int argc, char *argv[]);
 	bool init();
-	bool loop();
+
+	bool  loop();
 	bool shutdown();
 
 	void Debug(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... );
+	void Error(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... );
+
 	Saphire::Module::IModule * getModule(Saphire::Core::Types::String name);
 
 	Saphire::Module::IModuleManager  * getModuleManager();
 	Saphire::Module::IMemoryModule * getMemoryManager();
 	Saphire::Module::IPlatformModule * getPlatform();
 	Saphire::Module::IVFSModule * getVFS();
+	Saphire::Module::IScriptsModule  * getScriptManager();
+	Saphire::Module::IThreadsModule  * getThreadsManager();
+
 
 private:
 	bool brun;
+
+	Saphire::Module::IThreadsModule *	threadManager;
 	Saphire::Module::IModuleManager *	moduleManager;
 	Saphire::Module::IMemoryModule *	memoryManager;
 	Saphire::Module::IPlatformModule * platformModule;
 	Saphire::Module::IDebugModule* debugModule;
 	Saphire::Module::IVFSModule * vfsModule;
+	Saphire::Module::IScriptsModule  * scriptManager;
 
+	Saphire::Core::Types::IAnyType dane;
 };
 
 

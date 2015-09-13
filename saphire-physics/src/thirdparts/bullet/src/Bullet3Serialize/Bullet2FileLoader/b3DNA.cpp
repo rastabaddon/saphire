@@ -348,7 +348,10 @@ static int name_is_array(char* name, int* dim1, int* dim2) {
 void bDNA::init(char *data, int len, bool swap)
 {
 	int *intPtr=0;short *shtPtr=0;
-	char *cp = 0;int dataLen =0;uintptr_t nr=0;
+	char *cp = 0;
+	int dataLen =0;
+	unsigned long int  nr=0;
+
 	intPtr = (int*)data;
 
 	/*
@@ -390,7 +393,7 @@ void bDNA::init(char *data, int len, bool swap)
 
 	
 	{
-		nr= (uintptr_t)cp;
+		nr= (unsigned long int)cp;
 	//long mask=3;
 		nr= ((nr+3)&~3)-nr;
 		while (nr--)
@@ -426,7 +429,7 @@ void bDNA::init(char *data, int len, bool swap)
 	}
 
 {
-		nr= (uintptr_t)cp;
+		nr= (unsigned long int)cp;
 	//	long mask=3;
 		nr= ((nr+3)&~3)-nr;
 		while (nr--)

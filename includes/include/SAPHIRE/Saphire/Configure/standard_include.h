@@ -36,5 +36,7 @@
 #include <locale.h>
 #include <unistd.h>
 
+#include <thread>
+#include <mutex>
 
 #endif /* STANDARD_INCLUDE_H_ */

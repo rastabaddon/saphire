@@ -24,12 +24,14 @@ public:
 
 	Saphire::Core::ILibrary * openLibrary(Saphire::Core::Types::String name);
 	const Saphire::Core::Types::String  getPlatformDirectory();
+	 const Saphire::Core::Types::String  getPlatformName();
 
 private:
 	Saphire::Module::ICoreModule * SPTR_core;
 	Saphire::Core::CSignal * signal;
 
 	Saphire::Core::Types::String  platformDirectory;
+	Saphire::Core::Types::String  platformName;
 };
 
 

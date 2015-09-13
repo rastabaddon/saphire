@@ -22,7 +22,7 @@ namespace Saphire {
 				virtual ~IModuleManager(){};
 				virtual Saphire::Module::IModule * load (Saphire::Core::Types::String  name)=0;
 				virtual Saphire::Module::IModule *  getModule (Saphire::Core::Types::String  name)=0;
-
+				virtual Saphire::Core::Types::List<Saphire::Module::IModule *> getAllModules()=0;
 		};
 
 	}

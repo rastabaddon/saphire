@@ -28,6 +28,7 @@ namespace Saphire {
 				virtual Saphire::Core::Files::IFile * openFile(Saphire::Core::Types::String path,bool writable=false)=0;
 				virtual bool  isFileExists(const Saphire::Core::Types::String & name)=0;
 				virtual bool  isDirExists(const Saphire::Core::Types::String & name)=0;
+				virtual Saphire::Core::Types::List<Saphire::Core::Files::IDirEntry> scanDir(Saphire::Core::Types::String path)=0;
 		};
 
 

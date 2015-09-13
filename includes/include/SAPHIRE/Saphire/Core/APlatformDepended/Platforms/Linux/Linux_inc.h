@@ -11,4 +11,6 @@
 	#include <dlfcn.h>
 	#include <pthread.h>
 
+	#define _P_ /
+
 #endif /* LINUX_INC_H_ */

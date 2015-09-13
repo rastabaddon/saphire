@@ -20,8 +20,11 @@ namespace Saphire {
 		public:
 			virtual Saphire::Core::Types::IMemoryBuffer * createMemoryBuffer(Saphire::Core::Types::size size)=0;
 
-			virtual void* allocate (size_t size)=0;
-			virtual void deallocate (void* pointerToDelete)=0;
+
+
+
+			virtual Saphire::Core::Types::pointer allocate (size_t size)=0;
+			virtual void deallocate (Saphire::Core::Types::pointer pointerToDelete)=0;
 
 		};
 	}

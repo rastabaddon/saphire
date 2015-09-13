@@ -48,18 +48,18 @@ CZipFile::CZipFile(Saphire::Module::ICoreModule * core,Saphire::Core::Types::Str
 			ret = inflate(&strm, Z_NO_FLUSH);
 			(void)inflateEnd(&strm);
 
-			SPTR_core->Debug(getName(),"Found in archive [%s] (DEFLATE, %llu bytes,%llu bytes)",path.c_str(),compressedBuffer->getSize(),buffer->getSize());
+			//SPTR_core->Debug(getName(),"Found in archive [%s] (DEFLATE, %llu bytes,%llu bytes)",path.c_str(),compressedBuffer->getSize(),buffer->getSize());
 
 		break;
 		case 0:
 		//	SPTR_core->Debug(getName(),"Decompresion: Method Storage ");
 			memcpy((void *)buffer->getPointer(),(void *)compressedBuffer->getPointer(),compressedBuffer->getSize());
-			SPTR_core->Debug(getName(),"Found in archive [%s] (STORAGE, %llu bytes,%llu bytes)",path.c_str(),compressedBuffer->getSize(),buffer->getSize());
+			//SPTR_core->Debug(getName(),"Found in archive [%s] (STORAGE, %llu bytes,%llu bytes)",path.c_str(),compressedBuffer->getSize(),buffer->getSize());
 		break;
 
-		default:
+		//default:
 
-			SPTR_core->Debug(getName(),"Found in archive [%s] (Unknown Method %#2X, %llu bytes,%llu bytes)",compresion,path.c_str(),compressedBuffer->getSize(),buffer->getSize());
+			//SPTR_core->Debug(getName(),"Found in archive [%s] (Unknown Method %#2X, %llu bytes,%llu bytes)",compresion,path.c_str(),compressedBuffer->getSize(),buffer->getSize());
 	}
 
 	switch(ret)
@@ -124,6 +124,12 @@ bool CZipFile::put(Saphire::Core::Types::size pos,Saphire::Core::Types::u8 _char
 	return false;
 }
 
+Saphire::Core::Types::String CZipFile::getAsString()
+{
+	Saphire::Core::Types::String  data;
+	data.append((const char *)buffer->getPointer(),buffer->getSize());
+	return data;
+}
 
 } /* namespace Files */
 } /* namespace Core */

@@ -24,10 +24,11 @@ namespace Module {
 			const Saphire::Core::Types::String getModuleName();
 
 			void Debug(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... );
+			void Error(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... );
 
 		private:
 			Saphire::Core::Types::String toStringColor(int attr,int fg,int bg=8);
-
+			char buffer[1024];
 	};
 
 

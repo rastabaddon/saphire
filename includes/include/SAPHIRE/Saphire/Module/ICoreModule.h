@@ -19,10 +19,14 @@ namespace Saphire {
 		{
 			public:
 				virtual void Debug(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... )=0;
+				virtual void Error(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... )=0;
 
 				virtual Saphire::Module::IVFSModule * getVFS()=0;
 				virtual Saphire::Module::IPlatformModule * getPlatform()=0;
 				virtual Saphire::Module::IMemoryModule * getMemoryManager()=0;
+				virtual Saphire::Module::IScriptsModule  * getScriptManager()=0;
+				virtual Saphire::Module::IModuleManager  * getModuleManager()=0;
+
 		};
 
 

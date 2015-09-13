@@ -41,6 +41,7 @@ public:
 	const Saphire::Core::Types::String getDebugName();
 
 	Saphire::Core::Types::s8 getStatus();
+	Saphire::Core::Types::String getAsString();
 
 private:
 

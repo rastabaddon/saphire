@@ -15,7 +15,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
+#include <errno.h>
 
 #ifdef _WIN32
 	#include <windows.h>

@@ -17,7 +17,7 @@ namespace Saphire {
 
 		class IGFXModule : public Saphire::Module::IModule
 		{
-
+			Saphire::Core::Graphics::IScreen * createScreen(Saphire::Core::Graphics::TE_SAPHIRE_DRIVER driver = Saphire::Core::Graphics::TE_SAPHIRE_DRIVER::TE_OPENGL,Saphire::Core::Types::u16 width=800,Saphire::Core::Types::u16 height=600,bool fullscreen=false );
 		};
 
 

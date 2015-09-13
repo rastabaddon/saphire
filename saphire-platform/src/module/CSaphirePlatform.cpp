@@ -23,8 +23,10 @@ namespace Module {
 
 			#ifdef _WIN32
 			platformDirectory += "bin/windows";
+			platformName = "windows";
 			#else
 			platformDirectory += "bin/linux";
+			platformName = "linux";
 			#endif
 
 			//#ifndef _WIN32
@@ -35,22 +37,25 @@ namespace Module {
 
 			#ifdef ENVIRONMENT32
 				platformDirectory += "32";
+				platformName += "/32";
 			#else
 				platformDirectory += "64";
+				platformName += "/64";
 			#endif
 
-
-		// #ifndef _WIN32
 				platformDirectory += "/";
-		// #else
-		//		platformDirectory += "\\";
-		// #endif
+
 
 
 		}
 
 		CSaphirePlatform::~CSaphirePlatform() {
 			Free(signal);
+		}
+
+		const Saphire::Core::Types::String  CSaphirePlatform::getPlatformName()
+		{
+			return platformName;
 		}
 
 		 Saphire::Core::ILibrary * CSaphirePlatform::openLibrary(Saphire::Core::Types::String name)

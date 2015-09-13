@@ -9,8 +9,10 @@
 #define MODULE_INC_H_
 
 
+	#include "IModule.h"
 
 	#include "IDebugModule.h"
+	#include "IThreadsModule.h"
 	#include "IMemoryModule.h"
 	#include "IMainModule.h"
 	#include "IModuleManager.h"
@@ -18,5 +20,7 @@
 	#include "IVFSModule.h"
 	#include "IGFXModule.h"
 	#include "ICoreModule.h"
+	#include "IPhysicsModule.h"
+	#include "IScriptsModule.h"
 
 #endif /* MODULE_INC_H_ */

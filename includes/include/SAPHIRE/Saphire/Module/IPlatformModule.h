@@ -17,7 +17,10 @@ namespace Saphire {
 
 		class IPlatformModule : public Saphire::Module::IModule
 		{
-			virtual Saphire::Core::ILibrary * openLibrary(Saphire::Core::Types::String name)=0;
+			public:
+				virtual Saphire::Core::ILibrary * openLibrary(Saphire::Core::Types::String name)=0;
+				virtual const Saphire::Core::Types::String  getPlatformDirectory()=0;
+				virtual const Saphire::Core::Types::String  getPlatformName()=0;
 		};
 
 

@@ -19,7 +19,7 @@ namespace Saphire {
 		{
 			public:
 				virtual void Debug(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... )=0;
-
+				virtual void Error(Saphire::Core::Types::String where,Saphire::Core::Types::String format, ... )=0;
 		};
 
 

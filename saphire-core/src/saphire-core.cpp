@@ -24,9 +24,14 @@ using namespace std;
 Saphire::Core::CoreModule * core = NULL;
 
 int main(int argc, char *argv[]) {
+		int ret = 0;
 		core = NULL;
 	    core = new Saphire::Core::CoreModule();
-		return core->run(argc,argv);
+
+		ret = core->run(argc,argv);
+
+
+		return ret;
 }
 
 

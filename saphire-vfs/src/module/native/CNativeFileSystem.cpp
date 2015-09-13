@@ -22,29 +22,16 @@ namespace Files {
 		FreeO(SPTR_core->getVFS());
 	}
 
-	const Saphire::Core::Types::String CNativeFileSystem::convertPathTo(Saphire::Core::Types::String path)
-	{
-			#ifdef WIN32
 
-			#endif
-			return path;
-	}
-
-	const Saphire::Core::Types::String CNativeFileSystem::convertPathFrom(Saphire::Core::Types::String path)
-	{
-			#ifdef WIN32
-			#endif
-			return path;
-	}
 
 	bool  CNativeFileSystem::setNativeBaseDir(Saphire::Core::Types::String path)
 	{
 
-		if(chdir(convertPathTo(path).c_str())!=0)
+		if(chdir(path.c_str())!=0)
 		{
 			SPTR_core->Debug(getName(),"Error set current dir %s ",path.c_str());
 		}
-		currentPath = convertPathFrom(getcwd (NULL,0));
+		currentPath = getcwd (NULL,0);
 
 		SPTR_core->Debug(getName(),"Current dir is %s ",currentPath.c_str());
 
@@ -60,32 +47,50 @@ namespace Files {
 		return "NFS";
 	}
 
-	inline bool  CNativeFileSystem::isFileExists(const Saphire::Core::Types::String & name)
+	inline bool  CNativeFileSystem::isFileExists(const Saphire::Core::Types::String & path)
 	{
 
-	  struct stat info;
+		for (std::list<Saphire::Core::Files::IArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
+		{
 
-	  	  Saphire::Core::Types::String path = currentPath + name;
+
+			if((*it)->isFileExists(path)) return true;
+		}
+
+		//TEST NATIVE
+		struct stat info;
+
+ 	   Saphire::Core::Types::String realpath = currentPath + path;
 
 
-		  if( stat( convertPathTo(path).c_str(), &info ) != 0 ) {
-		      return false;
+
+
+
+		  if( stat( realpath.c_str(), &info ) != 0 ) {
+			  return false;
 		  } else if( info.st_mode & S_IFDIR ) { // S_ISDIR() doesn't exist on my windows
 			  return false;
 		  }
 			  return true;
 	}
 
-	inline bool  CNativeFileSystem::isDirExists(const Saphire::Core::Types::String & name)
+	inline bool  CNativeFileSystem::isDirExists(const Saphire::Core::Types::String & path)
 	{
+		for (std::list<Saphire::Core::Files::IArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
+				{
+
+					if((*it)->isDirExists(path)) return true;
+				}
+
+		//TEST NATIVE
 		  struct stat info;
 
 
-			  Saphire::Core::Types::String path = currentPath + name;
+			  Saphire::Core::Types::String realpath = currentPath + path;
 
 
 
-			  if( stat( convertPathTo(path).c_str(), &info ) != 0 )
+			  if( stat( realpath.c_str(), &info ) != 0 )
 			  {
 
 			      return false;
@@ -127,7 +132,7 @@ namespace Files {
 		struct dirent *ent;
 
 
-		if ((dir = opendir (convertPathTo(_path).c_str())) != NULL) {
+		if ((dir = opendir (_path.c_str())) != NULL) {
 		  /* print all the files and directories within directory */
 		  while ((ent = readdir (dir)) != NULL) {
 
@@ -158,10 +163,11 @@ namespace Files {
 
 		if(!isFileExists(path)) return NULL;
 
-		//SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
+		SPTR_core->Debug(getName(),"Try open file %s ",path.c_str());
 		Saphire::Core::Files::IFile * file = NULL;
 		for (std::list<Saphire::Core::Files::IArchive *>::iterator it=archives.begin(); it != archives.end(); ++it)
 		{
+
 			file = (*it)->openFile(path,writable);
 			if(file) break;
 		}
